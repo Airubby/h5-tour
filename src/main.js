@@ -1,71 +1,49 @@
 import Vue from 'vue'
-import axios from 'axios'
-import App from '@/App.vue'
-import {router} from '@/router/index'
-import store from '@/store/index'
-import request from '@/utils/request'
-import tool from '@/utils/tool'  //工具函数
-import 'promise-polyfill'  //兼容低版本浏览器  
-import 'babel-polyfill' //兼容低版本浏览器  
+import App from './App'
+import store from './store'
+// import request from './service/request'
 
-
-import '@/utils/directive'  //自定义指令
-
-import '@/utils/mock.js'  //测试接口
-
-
-import '@/assets/css/index.less'
-
-import Meta from 'vue-meta';
-Vue.use(Meta);
-
-
-
-// 将API方法绑定到全局
-Vue.prototype.$r=request
-
-//绑定工具函数到全局
-Vue.prototype.$tool = tool
-Vue.prototype.$store = store
-
+import aiInput from './components/ai-ui/ai-input'
+Vue.component('ai-input',aiInput)
+import aiTextarea from './components/ai-ui/ai-textarea'
+Vue.component('ai-textarea',aiTextarea)
 
 Vue.config.productionTip = false
+
+// Vue.prototype.$r = request
+
+import util from './common/util'  //工具函数
+//绑定工具函数到全局
+Vue.prototype.$util = util
+// import echarts from './common/echarts.min.js'  //工具函数
+// Vue.prototype.$echarts =echarts
+
+Vue.prototype.$store = store
+
 function getServerConfig() {
-  return new Promise ((resolve, reject) => {
-    axios.get('/serverConfig.json').then((result) => {
-      console.log(result)
-      let config = result.data;
-      let ajaxUrl = process.env.NODE_ENV == 'production' ? config.production:config.develop;
-      Vue.prototype.$ajaxUrl=ajaxUrl;
-      require('./permission.js')
-      resolve();
-    }).catch((error) => {
-      console.log(error)
-      reject()
+    return new Promise ((resolve, reject) => {
+        uni.request({
+            url:"/serverConfig.json",
+            success: (res) => {
+                console.log(res.data);
+                let config = res.data;
+                Vue.prototype.$ajaxUrl=config.ajaxUrl;
+                Vue.prototype.$fileUrl=config.fileUrl;
+                store.dispatch("setAjaxUrl",config.ajaxUrl)
+                resolve();
+            }
+        })
+
     })
-  })
-}
+  }
+
 
 async function init() {
-  await getServerConfig();
-  new Vue({
-    router,
-    store,
-    metaInfo(){
-      return {
-          title: this.$store.state.app.metaInfo.title,
-          meta: [
-              {
-                  name: "keywords",
-                  content: this.$store.state.app.metaInfo.keywords
-              }, {
-                  name: "description",
-                  content: this.$store.state.app.metaInfo.description
-              }
-          ]
-      }
-    },
-    render: h => h(App),
-  }).$mount('#app')
-}
-init();
+    App.mpType = 'app'
+    await getServerConfig();
+    new Vue({
+      store,
+      render: h => h(App),
+    }).$mount()
+  }
+  init();

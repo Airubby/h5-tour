@@ -1,0 +1,126 @@
+{
+  "pages": [
+    {
+      "path": "pages/home/index",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "pages/register/index",
+      "style": {
+        "navigationBarTitleText": "注册"
+      }
+    },
+    {
+      "path": "pages/allProduct/index",
+      "style": {
+        "navigationBarTitleText": "全部宝贝"
+      }
+    },
+    {
+      "path": "pages/buyersShow/index",
+      "style": {
+        "navigationBarTitleText": "买家秀"
+      }
+    },
+    {
+      "path": "pages/typeProduct/index",
+      "style": {
+        "navigationBarTitleText": "宝贝分类"
+      }
+    },
+    {
+      "path": "pages/notesContact/index",
+      "style": {
+        "navigationBarTitleText": "联系客服"
+      }
+    },
+    {
+      "path": "pages/video/index",
+      "style": {
+        "navigationBarTitleText": "视频玩法"
+      }
+    },
+    {
+      "path": "pages/share/index",
+      "style": {
+        "navigationBarTitleText": "分享领钱"
+      }
+    },
+    {
+      "path": "pages/event/index",
+      "style": {
+        "navigationBarTitleText": "活动"
+      }
+    },
+    {
+      "path": "pages/mycenter/index",
+      "style": {
+        "navigationBarTitleText": "个人中心"
+      }
+    }
+
+  ],
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#FF5000",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "iconPath": "static/icons/logo.png",
+        "selectedIconPath": "static/icons/logo.png",
+        "text": ""
+      },
+      {
+        "pagePath": "pages/allProduct/index",
+        "iconPath": "static/icons/all-product.png",
+        "selectedIconPath": "static/icons/all-product-selected.png",
+        "text": "全部宝贝"
+      },
+      {
+        "pagePath": "pages/buyersShow/index",
+        "iconPath": "static/icons/buyersShow.png",
+        "selectedIconPath": "static/icons/buyersShow-selected.png",
+        "text": "买家秀"
+      },
+      {
+        "pagePath": "pages/typeProduct/index",
+        "iconPath": "static/icons/typeProduct.png",
+        "selectedIconPath": "static/icons/typeProduct-selected.png",
+        "text": "宝贝分类"
+      },
+      {
+        "pagePath": "pages/notesContact/index",
+        "iconPath": "static/icons/notesContact.png",
+        "selectedIconPath": "static/icons/notesContact.png",
+        "text": "联系客服"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "新疆旅游",
+    "navigationBarBackgroundColor": "#40a563",
+    "backgroundColor": "#fff",
+    "navigationStyle":"custom"
+  },
+	"condition" : { 
+		"current": 0, 
+		"list": [
+			{
+				"name": "", 
+				"path": "", 
+				"query": "" 
+			}
+		]
+	}
+}

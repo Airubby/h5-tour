@@ -1,23 +1,39 @@
-
 const app = {
   state: {
-    metaInfo: {
-      title: "新疆旅游",
-      keywords: "新疆旅游",
-      description: "新疆旅游"
-    }
+    loginStatus:false,
+    token:'',
+    location:"定位中...",
+    previewInfo:{},
+    ajaxUrl:"",
   },
   mutations: {
-    CAHNGE_META_INFO(state, metaInfo) {
-      state.metaInfo = metaInfo;
+    SET_STATUS: (state, loginState) => {
+      state.loginStatus = loginState
     },
-
+    SET_LOCATION: (state, location) => {
+      state.location = location
+    },
+    SET_PREVIEWINFO: (state,info) => {
+      state.previewInfo=info;
+    },
+    SET_AJAXURL:(state, url) => {
+      state.ajaxUrl = url
+    },
   },
   actions: {
-    //动态修改title keywords description
-    changeMetaInfo({commit},metaInfo){
-      commit('CAHNGE_META_INFO',metaInfo)
+    setStatus({commit},loginState){
+      commit('SET_STATUS', loginState)
+    },
+    setLocation({commit},location){
+      commit('SET_LOCATION', location)
+    },
+    setPreviewInfo({commit},info){
+      commit('SET_PREVIEWINFO',info)
+    },
+    setAjaxUrl({commit},url){
+      commit('SET_AJAXURL', url)
     }
+
   }
 
 }

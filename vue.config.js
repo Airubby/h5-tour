@@ -1,37 +1,8 @@
 const path = require("path");
 const chalk = require('chalk')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
-// const PrerenderSPAPlugin = require('prerender-spa-plugin')   //prerender-spa-plugin  这个在自动部署上面报错
 const TerserPlugin = require('terser-webpack-plugin')
 const isProduction = process.env.NODE_ENV === 'production';
-const externals = {
-    'vue': 'Vue',
-    'vue-router': 'VueRouter',
-    'vuex': 'Vuex',
-    'axios': 'axios',
-}
-// CDN外链，会插入到index.html中 打包的时候去掉main.js中的elTablePagination引用
-const cdn = {
-    // 开发环境
-    dev: {
-      css: [],
-      js: []
-    },
-    // 生产环境
-    build: {
-      css: [],
-      js: [
-        '/nodepackage/vue/dist/vue.min.js',
-        '/nodepackage/vue-router/dist/vue-router.min.js',
-        '/nodepackage/vuex/dist/vuex.min.js',
-        '/nodepackage/axios/dist/axios.min.js'
-      ]
-    }
-}
-// // 是否使用预渲染
-// const productionPrerender = false
-// // 需要预渲染的路由
-// const prerenderRoutes = [ '/login']
 // 是否使用gzip
 const productionGzip = true
 // 需要gzip压缩的文件后缀
@@ -70,43 +41,14 @@ module.exports = {
         config.optimization.splitChunks({
             chunks: 'all'
         })
-        /**
-         * 添加CDN参数/将externals定义的不需要Webpack打包编译的到htmlWebpackPlugin配置中，
-         */
-        config
-            .plugin('html')
-            .tap(args => {
-            if (isProduction) {
-                args[0].cdn = cdn.build
-            }
-            if (!isProduction) {
-                args[0].cdn = cdn.dev
-            }
-            return args
-            })
-        /**
-         * 无需使用@import在每个scss文件中引入变量或者mixin，也可以避免大量@import导致build变慢
-         * sass-resources-loader 文档链接：https://github.com/shakacode/sass-resources-loader
-         */
-        const oneOfsMap = config.module.rule('scss').oneOfs.store
-        const sassResources = ['color.scss', 'mixin.scss', 'common.scss'] // scss资源文件，可以在里面定义变量，mixin,全局混入样式等
-        oneOfsMap.forEach(item => {
-            item
-            .use('sass-resources-loader')
-            .loader('sass-resources-loader')
-            .options({
-                resources: sassResources.map(file => path.resolve(__dirname, 'src/style/' + file))
-            })
-            .end()
-        })
     },
     //公共代码抽离
     configureWebpack: config => {
         const myConfig = {}
         if (isProduction) {
             // 1. 生产环境npm包转CDN，externals定义的部分不需要Webpack打包编译
-            myConfig.externals = externals
-            // 2. 使用预渲染，在仅加载html和css之后即可显示出基础的页面，提升用户体验，避免白屏，但在自动部署上面报错
+            // myConfig.externals = externals
+            // 2. 使用预渲染，在仅加载html和css之后即可显示出基础的页面，提升用户体验，避免白屏
             myConfig.plugins = []
             //3.js代码整合
             let optimization= {
@@ -221,28 +163,27 @@ module.exports = {
     // pwa: {},
     // webpack-dev-server 相关配置
     devServer: {
-        open: true, 
+        open: false, 
         compress: false, // 开启压缩
         overlay: {
             warnings: true,
             errors: true
         },
         host: '0.0.0.0',
-        port: 8081,
+        port: 8088,
         https: false,
         hotOnly: false,
         // 设置代理
-        proxy: {
-            '/api': {
-            target: 'http://192.168.16.6:8090', // 你接口的域名
-                secure: false, // 如果是https接口，需要配置这个参数
-                changeOrigin: true, // 如果接口跨域，需要进行这个参数配置
-                ws:false,
-                pathRewrite:{
-                '^/api':'/api'
-                }
-		    }
-        },
+        // proxy: {
+        //     '/': {
+        //     target: 'http://106.54.120.61:7000', // 你接口的域名
+        //         secure: false, // 如果是https接口，需要配置这个参数
+        //         changeOrigin: false, // 如果接口跨域，需要进行这个参数配置
+        //         pathRewrite:{
+        //         '^/':'/'
+        //         }
+		//     }
+        // },
         before: app => {
         }
     },
