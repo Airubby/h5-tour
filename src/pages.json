@@ -1,7 +1,7 @@
 {
   "pages": [
     {
-      "path": "pages/home/index",
+      "path": "pages/index",
       "style": {
         "navigationBarTitleText": "首页"
       }
@@ -75,7 +75,7 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/home/index",
+        "pagePath": "pages/index",
         "iconPath": "static/icons/logo.png",
         "selectedIconPath": "static/icons/logo.png",
         "text": ""
