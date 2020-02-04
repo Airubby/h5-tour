@@ -16,9 +16,10 @@ uni-input{
 uni-image{
 	vertical-align: middle;
 }
-uni-textarea{
+uni-textarea,uni-video{
 	width:100%;
 }
+
 	/* #ifdef APP-PLUS */
 
 	/* #endif */
