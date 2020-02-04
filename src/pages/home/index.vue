@@ -363,11 +363,12 @@ export default {
     .index-ars{
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
         background: #fff;
-        padding: 10px 4px 0;
+        padding: 10px 10px 0;
         .index-arscon{
-            width: calc(50% - 16px);
-            margin: 0 8px 10px;
+            width: calc(50% - 5px);
+            margin: 0 0 10px;
             .title{
                 position: relative;
                 flex-direction: column;
@@ -474,17 +475,18 @@ export default {
         border-radius: 5px 5px 0 0;
     }
     .index-heart{
+        padding: 0 10px;
         display: flex;
         flex-wrap: wrap;
-        padding: 0 4px 0;
+        justify-content: space-between;
         .heart-con{
             background: #fff;
             padding: 10px 5px;
             border-radius: 0 0 5px 5px;
         }
         .index-arscon{
-            width: calc(50% - 16px);
-            margin: 0 8px 10px;
+            width: calc(50% - 5px);
+            margin: 0 0 10px;
             .title{
                 position: relative;
                 flex-direction: column;

@@ -12,7 +12,7 @@
                     <image src="/static/icons/logo.png" style="width:16px;height:16px;margin-right:5px;" mode="widthFix"></image>粉丝数<text>234325</text>
                 </view>
                 <view class="public-top-nav">
-                    <navigator class="public-top-nav-search" url="/pages/register/index">
+                    <navigator class="public-top-nav-search" url="/pages/search/index">
                         <view class="search">
                             <image src="/static/icons/search.png" style="width:18px;height:18px;margin-right:5px;" mode="widthFix"></image>搜索
                         </view>

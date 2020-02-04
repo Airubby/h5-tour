@@ -43,30 +43,11 @@
       }
     },
     {
-      "path": "pages/video/index",
+      "path": "pages/search/index",
       "style": {
-        "navigationBarTitleText": "视频玩法"
-      }
-    },
-    {
-      "path": "pages/share/index",
-      "style": {
-        "navigationBarTitleText": "分享领钱"
-      }
-    },
-    {
-      "path": "pages/event/index",
-      "style": {
-        "navigationBarTitleText": "活动"
-      }
-    },
-    {
-      "path": "pages/mycenter/index",
-      "style": {
-        "navigationBarTitleText": "个人中心"
+        "navigationBarTitleText": "店铺搜索"
       }
     }
-
   ],
   "tabBar": {
     "color": "#333333",
