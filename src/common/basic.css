@@ -114,6 +114,84 @@ a{
 .width-auto{
 	width: auto !important;
 }
+/* 头部公共 */
+.fixed-box{
+	width: 100%;
+	height: 118px;
+}
+.public-top{
+	width: 100%;
+	height: 118px;
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	background: url("~@/static/images/bg.png") no-repeat;
+}
+.public-top-con{
+	width: 100%;
+	height: 100%;
+	padding: 15px 12px 0;
+	background: rgba(52, 51, 51, 0.86);
+	color: #fff;
+}
+.public-top-info{
+	font-size: 18px;
+	display: flex;
+	justify-content: space-between;
+}
+.public-top-attention{
+	font-size: 14px;
+	border: 1px solid #818489;
+	padding: 3px 6px;
+	border-radius: 30px;
+	background: #414449;
+}
+.public-top-nav{
+	font-size: 16px;
+	margin-top: 16px;
+	display: flex;
+	justify-content: space-between;
+}
+.public-top-nav-search{
+	display: inline-block;
+	height: 30px;
+	width: 69px;
+}
+.public-top-full-search{
+	width: 100%;
+}
+.public-top-nav-search .search{
+	width: 100%;
+	display: inline-block;
+	background: #939496;
+	padding: 3px 6px 4px;
+	border-radius: 30px;
+}
+.public-scroll-navbar{
+	width: calc(100% - 85px);
+	height: 30px;
+	line-height: 26px;
+}
+.public-scroll-navbar-con{
+	width: 100%;
+	height: 100%;
+	white-space:nowrap;
+}
+.public-top-nav-list{
+	display: inline-block;
+	margin-right: 16px;
+}
+.public-top-nav-list.active{
+	border-bottom: 2px solid #fff;
+}
+.swiper-box{
+	width: 100%;
+	height: calc(100% - 118px);
+}
+.heightFull{
+	height: 100%;
+}
 /* 搜索列表页 */
 .search-content{
 	padding: 0 10px;

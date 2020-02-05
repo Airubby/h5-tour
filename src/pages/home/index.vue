@@ -1,16 +1,12 @@
 <template>
     <view>
         <view class="page-section-spacing">
-            <swiper class="swiper" :indicator-dots="true" :autoplay="true" :interval="5000" :duration="500">
-                <swiper-item>
-                    <image src="/static/images/banner.png" style="width:100%;height:300px;" mode="widthFix"></image>
+            <swiper class="swiper" :indicator-dots="true" :autoplay="true" :interval="5000" :duration="500" :style="getHeight">
+                <template v-for="item in 3">
+                <swiper-item :key="item">
+                    <image src="/static/images/index-banner.png" class="index-banner" style="width:100%;height:100%;" mode="widthFix"></image>
                 </swiper-item>
-                <swiper-item>
-                    <image src="/static/images/banner.png" style="width:100%;height:300px;" mode="widthFix"></image>
-                </swiper-item>
-                <swiper-item>
-                    <image src="/static/images/banner.png" style="width:100%;height:300px;" mode="widthFix"></image>
-                </swiper-item>
+                </template>
             </swiper>
         </view>
         <view class="destination">
@@ -41,7 +37,8 @@
         <view>
             <view class="index-title">AR产品 4S体验</view>
             <view class="index-ars">
-                <view class="index-arscon">
+                <template v-for="item in 4">
+                <view class="index-arscon" :key="item">
                     <image src="/static/images/pimg.png" style="width:100%;height:100%;" mode="widthFix"></image>
                     <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
                     <view class="nowprice">
@@ -55,48 +52,7 @@
                         立即购买
                     </view>
                 </view>
-                <view class="index-arscon">
-                    <image src="/static/images/pimg.png" style="width:100%;height:100%;" mode="widthFix"></image>
-                    <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                    <view class="nowprice">
-                        <view>￥<text class="number">152.00</text></view>
-                    </view>
-                    <view class="info flex">
-                        <view class="oldprice">182.99</view>
-                        <view>累计售出<text>24</text>件</view>
-                    </view>
-                    <view class="btn">
-                        立即购买
-                    </view>
-                </view>
-                <view class="index-arscon">
-                    <image src="/static/images/pimg.png" style="width:100%;height:100%;" mode="widthFix"></image>
-                    <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                    <view class="nowprice">
-                        <view>￥<text class="number">152.00</text></view>
-                    </view>
-                    <view class="info flex">
-                        <view class="oldprice">182.99</view>
-                        <view>累计售出<text>24</text>件</view>
-                    </view>
-                    <view class="btn">
-                        立即购买
-                    </view>
-                </view>
-                <view class="index-arscon">
-                    <image src="/static/images/pimg.png" style="width:100%;height:100%;" mode="widthFix"></image>
-                    <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                    <view class="nowprice">
-                        <view>￥<text class="number">152.00</text></view>
-                    </view>
-                    <view class="info flex">
-                        <view class="oldprice">182.99</view>
-                        <view>累计售出<text>24</text>件</view>
-                    </view>
-                    <view class="btn">
-                        立即购买
-                    </view>
-                </view>
+                </template>
             </view>
         </view>
         <view>
@@ -111,9 +67,10 @@
             </view>
             <swiper :current="tabIndex" style="height:160px;" :duration="300" @change="changeTab">
                 <swiper-item class="rank-con">
-                    <view class="rank-con-box">
+                    <template v-for="(item,index) in 3">
+                    <view class="rank-con-box" :key="item">
                         <view class="rank-img">
-                            <image src="/static/icons/rank-one.png" class="rank-icon" mode="widthFix"></image>
+                            <image :src="'/static/icons/rank-'+index+'.png'" class="rank-icon" mode="widthFix"></image>
                             <image src="/static/images/pimg.png" class="index-con-img" mode="scaleToFill"></image>
                         </view>
                         <view class="info">
@@ -121,31 +78,13 @@
                             <view class="number"><text>24</text>人付款</view>
                         </view>
                     </view>
-                    <view class="rank-con-box">
-                        <view class="rank-img">
-                            <image src="/static/icons/rank-two.png" class="rank-icon" mode="widthFix"></image>
-                            <image src="/static/images/pimg.png" class="index-con-img" mode="scaleToFill"></image>
-                        </view>
-                        <view class="info">
-                            <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                            <view class="number"><text>24</text>人付款</view>
-                        </view>
-                    </view>
-                    <view class="rank-con-box">
-                        <view class="rank-img">
-                            <image src="/static/icons/rank-three.png" class="rank-icon" mode="widthFix"></image>
-                            <image src="/static/images/pimg.png" class="index-con-img" mode="scaleToFill"></image>
-                        </view>
-                        <view class="info">
-                            <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                            <view class="number"><text>24</text>人付款</view>
-                        </view>
-                    </view>
+                    </template>
                 </swiper-item>
                 <swiper-item class="rank-con">
-                    <view class="rank-con-box">
+                    <template v-for="(item,index) in 3">
+                    <view class="rank-con-box" :key="item">
                         <view class="rank-img">
-                            <image src="/static/icons/rank-one.png" class="rank-icon" mode="widthFix"></image>
+                            <image :src="'/static/icons/rank-'+index+'.png'" class="rank-icon" mode="widthFix"></image>
                             <image src="/static/images/banner.png" class="index-con-img" mode="scaleToFill"></image>
                         </view>
                         <view class="info">
@@ -153,84 +92,24 @@
                             <view class="number"><text>24</text>人付款</view>
                         </view>
                     </view>
-                    <view class="rank-con-box">
-                        <view class="rank-img">
-                            <image src="/static/icons/rank-two.png" class="rank-icon" mode="widthFix"></image>
-                            <image src="/static/images/banner.png" class="index-con-img" mode="scaleToFill"></image>
-                        </view>
-                        <view class="info">
-                            <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                            <view class="number"><text>24</text>人付款</view>
-                        </view>
-                    </view>
-                    <view class="rank-con-box">
-                        <view class="rank-img">
-                            <image src="/static/icons/rank-three.png" class="rank-icon" mode="widthFix"></image>
-                            <image src="/static/images/banner.png" class="index-con-img" mode="scaleToFill"></image>
-                        </view>
-                        <view class="info">
-                            <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                            <view class="number"><text>24</text>人付款</view>
-                        </view>
-                    </view>
+                    </template>
                 </swiper-item>
             </swiper>
         </view>
         <view>
             <view class="index-title index-title1">猜您喜欢</view>
             <view class="index-heart">
-                <view class="index-arscon">
+                <template v-for="item in 4">
+                <view class="index-arscon" :key="item">
                     <image src="/static/images/pimg.png" class="index-con-img" mode="widthFix"></image>
                     <view class="heart-con">
                         <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
                         <view class="nowprice">
                             <view>￥<text class="number">152.00</text></view>
                         </view>
-                        <view class="info flex">
-                            <view class="oldprice">182.99</view>
-                            <view>累计售出<text>24</text>件</view>
-                        </view>
                     </view>
                 </view>
-                <view class="index-arscon">
-                    <image src="/static/images/pimg.png" class="index-con-img" mode="widthFix"></image>
-                    <view class="heart-con">
-                        <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                        <view class="nowprice">
-                            <view>￥<text class="number">152.00</text></view>
-                        </view>
-                        <view class="info flex">
-                            <view class="oldprice">182.99</view>
-                            <view>累计售出<text>24</text>件</view>
-                        </view>
-                    </view>
-                </view>
-                <view class="index-arscon">
-                    <image src="/static/images/pimg.png" class="index-con-img" mode="widthFix"></image>
-                    <view class="heart-con">
-                        <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                        <view class="nowprice">
-                            <view>￥<text class="number">152.00</text></view>
-                        </view>
-                        <view class="info flex">
-                            <view class="oldprice">182.99</view>
-                            <view>累计售出<text>24</text>件</view>
-                        </view>
-                    </view>
-                </view>
-                <view class="index-arscon">
-                    <image src="/static/images/pimg.png" class="index-con-img" mode="widthFix"></image>
-                    <view class="heart-con">
-                        <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                        <view class="nowprice">
-                            <view>￥<text class="number">152.00</text></view>
-                        </view>
-                        <view class="info flex">
-                            <view class="oldprice">182.99</view>
-                            <view>累计售出<text>24</text>件</view>
-                        </view>
-                    </view>
-                </view>
+                </template>
             </view>
             <navigator class="toallProduct" url="/pages/allProduct/index" open-type="switchTab">
                 查看全部宝贝
@@ -239,7 +118,8 @@
         <view>
             <view class="index-title index-title1">逛逛更多宝贝</view>
             <view class="index-heart">
-                <view class="index-arscon">
+                <template v-for="item in 4">
+                <view class="index-arscon" :key="item">
                     <image src="/static/images/pimg.png" class="index-con-img" mode="widthFix"></image>
                     <view class="heart-con">
                         <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
@@ -252,61 +132,38 @@
                         </view>
                     </view>
                 </view>
-                <view class="index-arscon">
-                    <image src="/static/images/pimg.png" class="index-con-img" mode="widthFix"></image>
-                    <view class="heart-con">
-                        <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                        <view class="nowprice">
-                            <view>￥<text class="number">152.00</text></view>
-                        </view>
-                        <view class="info flex">
-                            <view class="oldprice">182.99</view>
-                            <view>累计售出<text>24</text>件</view>
-                        </view>
-                    </view>
-                </view>
-                <view class="index-arscon">
-                    <image src="/static/images/pimg.png" class="index-con-img" mode="widthFix"></image>
-                    <view class="heart-con">
-                        <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                        <view class="nowprice">
-                            <view>￥<text class="number">152.00</text></view>
-                        </view>
-                        <view class="info flex">
-                            <view class="oldprice">182.99</view>
-                            <view>累计售出<text>24</text>件</view>
-                        </view>
-                    </view>
-                </view>
-                <view class="index-arscon">
-                    <image src="/static/images/pimg.png" class="index-con-img" mode="widthFix"></image>
-                    <view class="heart-con">
-                        <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                        <view class="nowprice">
-                            <view>￥<text class="number">152.00</text></view>
-                        </view>
-                        <view class="info flex">
-                            <view class="oldprice">182.99</view>
-                            <view>累计售出<text>24</text>件</view>
-                        </view>
-                    </view>
-                </view>
+                </template>
             </view>
         </view>
     </view>
 </template>
 
 <script>
-import top from '@/pages/public/top.vue'
 export default {
-    components: {top},
+    components: {},
     created() {
         
     },
+    computed:{
+        getHeight(){
+            const { windowWidth, windowHeight } = uni.getSystemInfoSync();
+            let height=this.bannerHeight*windowWidth/this.bannerWidth;
+            return {'height':height+'px'}
+        }
+    },
     mounted() {
+        this.$nextTick (function () {
+            let list=this.$el.querySelector(".index-banner");
+            if(list){
+                this.bannerHeight=list.getElementsByTagName("img")[0].naturalHeight;
+                this.bannerWidth=list.getElementsByTagName("img")[0].naturalWidth;
+            }
+        });
     },
     data(){
         return{
+            bannerWidth:375,
+            bannerHeight:400,
             tabIndex:0,
             tabBars: [{
                 name: '销量排行',

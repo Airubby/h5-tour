@@ -13,11 +13,13 @@ uni-input{
 	line-height: 40px;
 	font-size: 14px;
 }
-uni-image{
-	vertical-align: middle;
-}
 uni-textarea,uni-video{
 	width:100%;
+}
+uni-image{
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
 }
 
 	/* #ifdef APP-PLUS */

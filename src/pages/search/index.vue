@@ -9,10 +9,12 @@
             </view>
             <view @tap="searchSubmit" class="search-btn">确定</view>
         </view>
-        <view>
+        <view class="fixed-box"></view>
+        <view v-if="list.length>0">
             <searchSort @backInfo="backInfo"></searchSort>
             <view class="search-content" :class="{'search-content-more':searchType}">
-                <view class="search-content-box">
+                <template v-for="item in 8">
+                <view class="search-content-box" :key="item">
                     <view class="search-content-img">
                         <image src="/static/images/pimg.png" class="img" :mode="imgmode"></image>
                     </view>
@@ -29,97 +31,7 @@
                         </view>
                     </view>
                 </view>
-                <view class="search-content-box">
-                    <view class="search-content-img">
-                        <image src="/static/images/pimg.png" class="img" :mode="imgmode"></image>
-                    </view>
-                    <view class="search-content-info">
-                        <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                        <view class="type">
-                            经典北疆环游线
-                        </view>
-                        <view class="label">
-                            <text class="txt">纯玩</text>
-                            <text class="txt">一价全包</text>
-                        </view>
-                        <view class="flex">
-                            <view class="price">￥<text class="number">152.00</text></view>
-                            <view class="info">月销<text>24</text>件</view>
-                        </view>
-                    </view>
-                </view>
-                <view class="search-content-box">
-                    <view class="search-content-img">
-                        <image src="/static/images/pimg.png" class="img" :mode="imgmode"></image>
-                    </view>
-                    <view class="search-content-info">
-                        <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                        <view class="type">
-                            经典北疆环游线
-                        </view>
-                        <view class="label">
-                        </view>
-                        <view class="flex">
-                            <view class="price">￥<text class="number">152.00</text></view>
-                            <view class="info">月销<text>24</text>件</view>
-                        </view>
-                    </view>
-                </view>
-                <view class="search-content-box">
-                    <view class="search-content-img">
-                        <image src="/static/images/pimg.png" class="img" :mode="imgmode"></image>
-                    </view>
-                    <view class="search-content-info">
-                        <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                        <view class="type">
-                            经典北疆环游线
-                        </view>
-                        <view class="label">
-                            <text class="txt">纯玩</text>
-                            <text class="txt">一价全包</text>
-                        </view>
-                        <view class="flex">
-                            <view class="price">￥<text class="number">152.00</text></view>
-                            <view class="info">月销<text>24</text>件</view>
-                        </view>
-                    </view>
-                </view>
-                <view class="search-content-box">
-                    <view class="search-content-img">
-                        <image src="/static/images/pimg.png" class="img" :mode="imgmode"></image>
-                    </view>
-                    <view class="search-content-info">
-                        <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                        <view class="type">
-                            经典北疆环游线
-                        </view>
-                        <view class="label">
-                        </view>
-                        <view class="flex">
-                            <view class="price">￥<text class="number">152.00</text></view>
-                            <view class="info">月销<text>24</text>件</view>
-                        </view>
-                    </view>
-                </view>
-                <view class="search-content-box">
-                    <view class="search-content-img">
-                        <image src="/static/images/pimg.png" class="img" :mode="imgmode"></image>
-                    </view>
-                    <view class="search-content-info">
-                        <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                        <view class="type">
-                            经典北疆环游线
-                        </view>
-                        <view class="label">
-                            <text class="txt">纯玩</text>
-                            <text class="txt">一价全包</text>
-                        </view>
-                        <view class="flex">
-                            <view class="price">￥<text class="number">152.00</text></view>
-                            <view class="info">月销<text>24</text>件</view>
-                        </view>
-                    </view>
-                </view>
+                </template>
             </view>
         </view>
         <view v-if="hasInfo&&list.length==0" class="searchInfo">
@@ -129,9 +41,10 @@
 </template>
 
 <script>
-import searchSort from '@/pages/public/components/searchSort.vue'
+import searchSort from '@/pages/public/mixins/searchSort'
 export default {
-    components: {searchSort},
+    components: {},
+    mixins:[searchSort],
     created() {
         
     },
@@ -144,8 +57,7 @@ export default {
                 name:null,
             },
             list:[],
-            searchType:false,
-            imgmode:'widthFix',
+            
         }
     },
 	methods: {
@@ -155,14 +67,7 @@ export default {
         searchSubmit:function(){
             this.list=[234]
         },
-        backInfo:function(){
-            this.searchType=!this.searchType;
-            if(this.searchType){
-                this.imgmode='scaleToFill';
-            }else{
-                this.imgmode='widthFix';
-            }
-        }
+        
 	},
     watch: {
         
@@ -178,6 +83,10 @@ export default {
         text-align: center;
         font-size: 16px;
     }
+    .fixed-box{
+        width: 100%;
+        height: 50px;
+    }
     .search{
         width: 100%;
         height: 50px;
@@ -185,6 +94,10 @@ export default {
         padding: 5px;
         font-size: 16px;
         display: flex;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
         .search-box{
             width: calc(100% - 100px);
             display: inline-block;
