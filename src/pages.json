@@ -31,6 +31,24 @@
       }
     },
     {
+      "path": "pages/buyersShow/detail",
+      "style": {
+        "navigationBarTitleText": "买家秀详情"
+      }
+    },
+    {
+      "path": "pages/buyersShow/discuss",
+      "style": {
+        "navigationBarTitleText": "买家秀评论"
+      }
+    },
+    {
+      "path": "pages/buyersShow/writeDiscuss",
+      "style": {
+        "navigationBarTitleText": "买家秀写评论"
+      }
+    },
+    {
       "path": "pages/typeProduct/index",
       "style": {
         "navigationBarTitleText": "宝贝分类"
@@ -52,6 +70,12 @@
       "path": "pages/video/detail",
       "style": {
         "navigationBarTitleText": "玩法视频"
+      }
+    },
+    {
+      "path": "pages/content/index",
+      "style": {
+        "navigationBarTitleText": "线路详情"
       }
     }
   ],

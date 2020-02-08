@@ -43,6 +43,9 @@ a{
 .bgfff{
 	background: #fff;
 }
+.bcolor{
+	color: #3A66A3;;
+}
 .ocolor{
 	color: #FF5000;
 }
@@ -88,6 +91,9 @@ a{
 .mt20{
 	margin-top: 20px;
 }
+.pt10{
+	padding-top: 10px !important;
+}
 .mb10{
 	margin-bottom: 10px;
 }
@@ -113,6 +119,31 @@ a{
 }
 .width-auto{
 	width: auto !important;
+}
+.bg10{
+	width: 100%;
+	height: 10px;
+	background: #F2F3F4;
+}
+.bottom-nav-fixed{
+	width: 100%;
+	height: 48px;
+}
+.bottom-nav{
+	width: 100%;
+	height: 48px;
+	background: #fff;
+	position: fixed;
+    left: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.20);
+}
+.bottom-nav-img-box{
+	font-size: 12px;
+	padding: 0 12px;
+	text-align: center;
 }
 /* 头部公共 */
 .fixed-box{
@@ -225,6 +256,21 @@ a{
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
+.search-content-info .title-two{
+	position: relative;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-shrink: 0;
+    font-size: 14px;
+    height: 36px;
+    line-height: 18px;
+    overflow: hidden;
+    color: #000000;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
 .search-content-info .type{
 	color: #FF5000;
 	height: 16px;
@@ -296,4 +342,88 @@ a{
 }
 .search-content-more .search-content-info .label{
 	display: block;
+}
+/* 买家秀评论 */
+.discuss .discuss-title{
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px solid #E9E9E9;
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	padding: 0 10px;
+	justify-content: space-between;
+}
+.discuss .discuss-title .discuss-title-con{
+	display: flex;
+	align-items: center;
+}
+.discuss .discuss-title .img{
+	width:24px;
+	height:24px;
+	margin-right: 10px;
+}
+.discuss .discuss-content{
+	padding: 12px;
+}
+.discuss .discuss-con-top{
+	width: 100%;
+	height: 32px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+.discuss .discuss-con-top-info{
+	display: flex;
+	justify-content: baseline;
+}
+.discuss .discuss-con-top-info .img{
+	width: 32px;
+	height: 32px;
+	margin-right: 10px;
+	border-radius: 50%;
+}
+.discuss .discuss-con-top-info .name{
+	font-size: 14px;
+	font-weight: bold;
+}
+.discuss .discuss-con-top-info .time{
+	font-size: 12px;
+	color: #999;
+}
+.discuss .discuss-con-top-zan{
+	display: flex;
+	font-size: 12px;
+	color: #999;
+}
+.discuss .discuss-con-top-zan .img{
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+}
+.discuss .discuss-con-info{
+	color: #333;
+	padding-left: 42px;
+}
+.discuss .disucss-con-info-more{
+	background: #FAFAFA;
+	padding: 5px 10px;
+	margin-top: 20px;
+	position: relative;
+}
+.discuss .disucss-con-info-more:before{
+	content:"";
+	width: 0;
+	height: 0;
+	font-size: 0px;
+	line-height: 0px;
+	position: absolute;
+	left: 20px;
+	top: -8px;
+	border-bottom: 9px solid #fafafa;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+}
+.discuss .disucss-con-info-more .discuss-con-info-morebox{
+	margin: 5px 0;
 }
