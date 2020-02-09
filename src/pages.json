@@ -55,6 +55,12 @@
       }
     },
     {
+      "path": "pages/typeProduct/typeSearch",
+      "style": {
+        "navigationBarTitleText": "宝贝分类列表"
+      }
+    },
+    {
       "path": "pages/notesContact/index",
       "style": {
         "navigationBarTitleText": "联系客服"

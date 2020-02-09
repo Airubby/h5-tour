@@ -1,16 +1,11 @@
 <template>
     <view class="content">
         <view class="search">
+            <view class="search-btn">{{initParams.name}}</view>
             <view @tap="back" class="search-btn">返回</view>
-            <view class="search-box">
-                <ai-input v-model="initParams.name" placeholder="搜索店铺内的宝贝" placeholderStyle="color:#999;" class="search-input">
-                    <image src="/static/icons/search-blank.png" class="search-icon" mode="widthFix"></image>
-                </ai-input>
-            </view>
-            <view @tap="searchSubmit" class="search-btn">确定</view>
         </view>
         <view class="fixed-box"></view>
-        <scroll-view scroll-y="true" :style="{ 'height':scrollHeight }" v-if="list.length>0">
+        <scroll-view scroll-y="true" :style="{ 'height':scrollHeight }">
             <searchSort @backInfo="backInfo"></searchSort>
             <view class="search-content" :class="{'search-content-more':searchType}">
                 <template v-for="item in 8">
@@ -45,13 +40,16 @@ import searchSort from '@/pages/public/mixins/searchSort'
 export default {
     components: {},
     mixins:[searchSort],
-    onLoad(){
+    onLoad(option){
         /* 设置当前滚动容器的高，若非窗口的高度，请自行修改 */
         uni.getSystemInfo({
             success:(res)=>{
                 this.scrollHeight=`${res.windowHeight-50}px`;
             }
         });
+        if(JSON.parse(decodeURIComponent(option.name))){
+			this.initParams.name=JSON.parse(decodeURIComponent(option.name));
+		}
     },
     mounted() {
     },
@@ -96,41 +94,26 @@ export default {
     .search{
         width: 100%;
         height: 50px;
-        background: #FFC900;
-        padding: 5px;
+        line-height: 50px;
+        padding: 5px 10px;
         font-size: 16px;
         display: flex;
         position: fixed;
+        justify-content: space-between;
         z-index: 9999;
         top: 0;
         left: 0;
+        background: rgba(52, 51, 51, 0.86);
         .search-box{
             width: calc(100% - 100px);
             display: inline-block;
         }
-        .search-input{
-            border: none;
-            background: #fff;
-            border-radius: 20px 0 20px 20px;
-            margin: 0px;
-            position: relative;
-            padding-left: 38px;
-            .search-icon{
-                width:18px;
-                height:18px;
-                margin-right:5px;
-                position: absolute;
-                left: 12px;
-                top: 10px;
-            }
-        }
         .search-btn{
             display: inline-block;
-            width: 50px;
             height: 40px;
             line-height: 40px;
             text-align: center;
-            color: #333;
+            color: #d7d7d7;
         }
     }
 </style>

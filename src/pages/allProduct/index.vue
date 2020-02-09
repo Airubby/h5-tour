@@ -2,7 +2,7 @@
     <div class="content">
         <top></top>
         <view class="swiper-box">
-            <scroll-view scroll-y="true" :scroll-top="scrollTop" class="heightFull">
+            <scroll-view scroll-y="true" :style="{ 'height':scrollHeight }">
                 <searchSort @backInfo="backInfo"></searchSort>
                 <view class="search-content" :class="{'search-content-more':searchType}">
                     <template v-for="item in 8">
@@ -32,10 +32,11 @@
 
 <script>
 import searchSort from '@/pages/public/mixins/searchSort'
+import scrollMain from '@/pages/public/mixins/scrollMain'
 import top from '@/pages/public/top.vue'
 export default {
     components: {top},
-    mixins:[searchSort],
+    mixins:[searchSort,scrollMain],
     created() {
         
     },
