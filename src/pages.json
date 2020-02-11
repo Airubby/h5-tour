@@ -39,15 +39,29 @@
     {
       "path": "pages/buyersShow/discuss",
       "style": {
-        "navigationBarTitleText": "买家秀评论"
+        "navigationBarTitleText": "评论"
       }
     },
     {
       "path": "pages/buyersShow/writeDiscuss",
       "style": {
-        "navigationBarTitleText": "买家秀写评论"
+        "navigationBarTitleText": "写评论"
       }
     },
+    {
+      "path": "pages/faqs/list",
+      "style": {
+        "navigationBarTitleText": "问答列表"
+      }
+    },
+    {
+      "path": "pages/faqs/detail",
+      "style": {
+        "navigationBarTitleText": "问答详情"
+      }
+    },
+
+    
     {
       "path": "pages/typeProduct/index",
       "style": {

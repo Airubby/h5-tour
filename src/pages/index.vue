@@ -32,7 +32,7 @@
                             <navigator class="public-top-nav-list" :class="{'active':info=='share'}" url="/pages/share/index">
                                 分享领钱
                             </navigator>
-                            <navigator class="public-top-nav-list" :class="{'active':info=='event'}" url="/pages/event/index">
+                            <navigator class="public-top-nav-list" :class="{'active':info=='faqs'}" url="/pages/faqs/index">
                                 活动
                             </navigator>
                             <navigator class="public-top-nav-list" :class="{'active':info=='mycenter'}" url="/pages/mycenter/index">
@@ -62,7 +62,7 @@
             </swiper-item>
             <swiper-item class="swiper-item">
                 <scroll-view scroll-y="true" :scroll-top="scrollTop" class="heightFull" @scroll="scrollNav">
-                    <event v-if="navIndex===3"></event>
+                    <faqs v-if="navIndex===3"></faqs>
                 </scroll-view>
             </swiper-item>
             <swiper-item class="swiper-item">
@@ -78,10 +78,10 @@
 import home from '@/pages/home/index.vue'
 import videoc from '@/pages/video/index.vue'
 import share from '@/pages/share/index.vue'
-import event from '@/pages/event/index.vue'
+import faqs from '@/pages/faqs/index.vue'
 import mycenter from '@/pages/mycenter/index.vue'
 export default {
-    components: {home,videoc,share,event,mycenter},
+    components: {home,videoc,share,faqs,mycenter},
     created() {
         
     },
@@ -97,7 +97,7 @@ export default {
     },
     data(){
         return{
-            navIndex:0,
+            navIndex:3,
             scrollLeft:0,
             scrollTop:0,
             navBars: [{
@@ -107,7 +107,7 @@ export default {
             }, {
                 name: '分享领钱'
             }, {
-                name: '活动'
+                name: '旅游问答'
             }, {
                 name: '个人中心'
             }],

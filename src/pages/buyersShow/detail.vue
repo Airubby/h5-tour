@@ -18,7 +18,7 @@
         </view>
         <template v-for="item in 4">
             <view class="show-img" :key="item">
-                <image src="/static/images/show.png" style="width:100%;" mode="widthFix"></image>
+                <image src="/static/images/show.png" class="img" style="width:100%;height:100%;" mode="widthFix"></image>
             </view>
         </template>
         <view class="bg10"></view>
@@ -181,6 +181,7 @@ export default {
         margin-bottom: 10px;
     }
     .show-img{
+        padding: 0 10px;
         margin-bottom: 16px;
     }
     .bottom-nav-input{
