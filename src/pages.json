@@ -60,6 +60,12 @@
         "navigationBarTitleText": "问答详情"
       }
     },
+    {
+      "path": "pages/faqs/write",
+      "style": {
+        "navigationBarTitleText": "发布问答"
+      }
+    },
 
     
     {

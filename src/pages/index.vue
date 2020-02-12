@@ -125,10 +125,11 @@ export default {
             this.navIndex = index; //一旦访问data就会出问题
         },
         async tapNav(e) { //点击tab-bar
-            if (this.navIndex === e.target.dataset.current) {
+            let index=parseInt(e.target.dataset.current);
+            if (this.navIndex === index) {
                 return false;
             } else {
-                this.navIndex = e.target.dataset.current
+                this.navIndex = index
             }
         },
 	},

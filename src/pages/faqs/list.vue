@@ -128,24 +128,24 @@
                     </view>
                 </view>
                 <navigator :url="'/pages/faqs/detail?id='+ encodeURIComponent(JSON.stringify('id'))">
-                <view class="faqs-list-box-con">
-                    <view class="info">
-                        <view class="info-con">
-                            <view class="more">
-                                <text class="more-bg"></text><text class="more-text">继续阅读</text>
-                            </view>
-                    　　    <text class="quality">优质</text>杭州ins风拍照地推荐：杭州创意设计中心  这个设计中心特别特别适合拍照，有超多个拍摄点，好多地方都可以拍出很韩剧的感觉！ 而且还有些地方很像美国～有种不花钱就能出国的感觉哈哈哈哈  大多数拍照点在室外，最好选择晴天来。 建议大家穿亮色的衣服。清新韩系的裙子，搭配墨镜小方巾之类的配饰，方便在不同的场景换不同的风格～  拍累了以后，可以到Oneday_.咖啡厅再拍些室内照片～应该算是这边最红的咖啡馆了，非常好看！ 而且饮料和甜点的味道也都蛮好的～
-                        </view>                    
+                    <view class="faqs-list-box-con">
+                        <view class="info">
+                            <view class="info-con">
+                                <view class="more">
+                                    <text class="more-bg"></text><text class="more-text">继续阅读</text>
+                                </view>
+                        　　    <text class="quality">优质</text>杭州ins风拍照地推荐：杭州创意设计中心  这个设计中心特别特别适合拍照，有超多个拍摄点，好多地方都可以拍出很韩剧的感觉！ 而且还有些地方很像美国～有种不花钱就能出国的感觉哈哈哈哈  大多数拍照点在室外，最好选择晴天来。 建议大家穿亮色的衣服。清新韩系的裙子，搭配墨镜小方巾之类的配饰，方便在不同的场景换不同的风格～  拍累了以后，可以到Oneday_.咖啡厅再拍些室内照片～应该算是这边最红的咖啡馆了，非常好看！ 而且饮料和甜点的味道也都蛮好的～
+                            </view>                    
+                        </view>
                     </view>
-                </view>
-                <view class="faqs-list-box-img">
-                    <view class="two-img">
-                        <image src="/static/images/show.png" class="img" mode="scaleToFill"></image>
+                    <view class="faqs-list-box-img">
+                        <view class="two-img">
+                            <image src="/static/images/show.png" class="img" mode="scaleToFill"></image>
+                        </view>
+                        <view class="two-img">
+                            <image src="/static/images/pimg.png" class="img" mode="scaleToFill"></image>
+                        </view>
                     </view>
-                    <view class="two-img">
-                        <image src="/static/images/pimg.png" class="img" mode="scaleToFill"></image>
-                    </view>
-                </view>
                 </navigator>
                 <view class="faqs-list-box-sc">
                     <view class="sc-box">
@@ -163,10 +163,23 @@
                 </view>
             </view>
         </view>
+        <view class="bg10"></view>
+        <view class="faqs-list faqs-list-top">
+            <view class="faqs-list-box-title">相关问题</view>
+            <view v-for="item in 5" :key="item" class="faqs-list-box">
+                <view class="faqs-list-box-title mb10">
+                    迪士尼乐园雨天游玩项目会有影响吗？
+                </view>
+                <view class="font-size12">
+                    <text>3352 浏览</text>
+                    <text class="ml15">22 回答</text>
+                </view>
+            </view>
+        </view>
         <view class="bottom-nav-fixed"></view>
         <view class="bottom-nav">
             <view class="bottom-nav-img-box">
-            <navigator class="bottom-nav-img-boxcon" :url="'/pages/faqs/detail?id='+ encodeURIComponent(JSON.stringify('id'))">
+            <navigator class="bottom-nav-img-boxcon" :url="'/pages/faqs/write'">
                 <image src="/static/icons/bi-line.png" style="width:18px;height:18px;margin-right:10px;" mode="widthFix"></image>我要回答
             </navigator>
             </view>

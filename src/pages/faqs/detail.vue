@@ -8,9 +8,9 @@
                 <view @tap="backTo()">
                     查看全部20条回答<image src="/static/icons/right.png" style="width:7px;height:13px;margin-left:5px;" mode="widthFix"></image>
                 </view>
-                <view class="faqs-list-top-infot">
+                <navigator class="faqs-list-top-infot" :url="'/pages/faqs/write'">
                     我来回答
-                </view>
+                </navigator>
             </view>
         </view>
         <view class="bg10"></view>
@@ -47,11 +47,20 @@
             </view>
         </view>
         <view class="bottom-nav-fixed"></view>
-        <view class="bottom-nav">
-            <view class="bottom-nav-img-box">
-            <navigator class="bottom-nav-img-boxcon" :url="'/pages/buyersShow/writeDiscuss?id='+ encodeURIComponent(JSON.stringify('cc'))">
-                <image src="/static/icons/bi-line.png" style="width:18px;height:18px;margin-right:10px;" mode="widthFix"></image>我要回答
-            </navigator>
+        <view class="next" @tap="nextTo()">
+            <image src="/static/icons/down-blue.png" style="width:12px;height:7px;margin-right:7px;" mode="widthFix"></image>下个回答
+        </view>
+        <view class="detail-bottom-nav">
+            <view class="btn-box">
+                <view class="btn-box-num">2</view>
+                <image src="/static/icons/zan-white.png" style="width:24px;height:24px;" mode="widthFix"></image>
+            </view>
+            <view class="btn-box">
+                <view class="btn-box-num">21</view>
+                <image src="/static/icons/info-white.png" style="width:24px;height:24px;" mode="widthFix"></image>
+            </view>
+            <view class="btn-box">
+                <image src="/static/icons/store-white.png" style="width:24px;height:24px;" mode="widthFix"></image>
             </view>
         </view>
     </view>
@@ -75,7 +84,15 @@ export default {
         }
     },
 	methods: {
-        
+        backTo:function(){
+            uni.navigateBack();
+        },
+        nextTo:function(){
+            uni.pageScrollTo({
+                scrollTop: 0,
+                duration: 300
+            });
+        }
 	},
     watch: {
         
@@ -101,23 +118,6 @@ export default {
             font-weight: bold;
         }
     }
-    .bottom-nav-img-box{
-       width: 100%;
-       font-size: 16px;
-        height: 34px;
-        font-weight: bold;
-        .bottom-nav-img-boxcon{
-            width: 100%;
-            background: #FFDD00;
-            color: #000;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            justify-content: center;
-            border-radius: 20px;
-        }
-    }
     .faqs-list .faqs-list-box{
         border: none;
         padding: 12px 0;
@@ -125,5 +125,77 @@ export default {
     .show-img .img{
         margin-bottom: 15px;
         border-radius: 3px;
+    }
+    .detail-bottom-nav{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 50px;
+        display: flex;
+        .btn-box{
+            position: relative;
+            box-sizing: border-box;
+            display: flex;
+            -webkit-box-orient: vertical;
+            flex-direction: column;
+            place-content: flex-start center;
+            flex-shrink: 0;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            margin-left: 24px;
+            border-radius: 25px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            .btn-box-num{
+                border: 0px solid black;
+                position: absolute;
+                box-sizing: border-box;
+                display: -webkit-box;
+                display: flex;
+                -webkit-box-orient: vertical;
+                flex-direction: column;
+                place-content: flex-start center;
+                flex-shrink: 0;
+                -webkit-box-pack: center;
+                -webkit-box-align: center;
+                align-items: center;
+                top: 0px;
+                left: 20px;
+                min-width: 32px;
+                height: 16px;
+                font-size: 12px;
+                color: #fff;
+                border-radius: 7px;
+                background-color: #ff5000;
+            }
+        }
+    }
+    .next{
+        text-decoration: none;
+        border: 0px solid black;
+        position: fixed;
+        box-sizing: border-box;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        flex-direction: row;
+        align-content: flex-start;
+        flex-shrink: 0;
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0.85);
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 2.5px 10px 0px;
+        border-radius: 18px;
+        width: 104px;
+        height: 36px;
+        padding: 11.5px 15px;
+        left: 259px;
+        right: 12px;
+        bottom: 105px;
+        -webkit-box-align: center;
+        align-items: center;
+        color: #00A2FF;
+        font-size: 12px;
     }
 </style>
