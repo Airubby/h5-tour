@@ -1,12 +1,11 @@
 <template>
-	<uni-popup :type="'center'" :mask-click="true" @change="change" ref="popup">
+	<uni-popup :type="'bottom'" :mask-click="true" @change="change" ref="popup" class="uni-popup">
 		<view class="uni-tip-title">{{title}}</view>
 		<view class="uni-tip-content">
 			<slot></slot>
 		</view>
 		<view class="uni-tip-group-button">
-			<view class="uni-tip-button" @click="close()">取消</view>
-			<view class="uni-tip-button" @click="sure()">确定</view>
+			<view class="uni-tip-button" @click="close()">确定</view>
 		</view>
 	</uni-popup>
 </template>
@@ -51,39 +50,40 @@
 </script>
 
 <style>
-	.uni-tip {
-		padding: 15px;
-		width: 100%;
-		height: 100%;
-		background: #fff;
-		box-sizing: border-box;
-		border-radius: 10px;
-	}
-
 	.uni-tip-title {
 		text-align: center;
 		font-weight: bold;
 		font-size: 16px;
 		color: #333;
+		height: 45px;
+		line-height: 45px;
+		background: #FFD400;
+		border-radius: 10px 10px 0 0;
 	}
 
 	.uni-tip-content {
 		max-height: 80%;
-		padding: 15px 0;
+		padding: 0px 10px 10px;
 		font-size: 14px;
 		color: #666;
 		text-align: left;
 	}
 
 	.uni-tip-group-button {
-		margin-top: 10px;
+		padding: 10px;
+		height: 60px;
 		display: flex;
 	}
 
 	.uni-tip-button {
-		width: 50%;
+		width: 100%;
+		height: 40px;
+		line-height: 40px;
 		text-align: center;
-		font-size: 14px;
+		border-radius: 20px;
+		font-size: 15px;
 		color: #3b4144;
+		background: #FFD400;
+		letter-spacing: 5px;
 	}
 </style>

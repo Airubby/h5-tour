@@ -3,11 +3,11 @@
         <view class="video-con">
             <video id="myVideo" src="http://img.cdn.qiniu.dcloud.net.cn/wap2appvsnative.mp4" 
             autoplay controls loop width="100%" height="300px"></video>
-            <view class="video-btn flex">
-                <view class="video-btncon" @tap="backTo()">
+            <view class="publictop-btn flex">
+                <view class="publictop-btncon" @tap="backTo()">
                     <image src="/static/icons/left.png" style="width:12px;height:20px;" mode="widthFix"></image>
                 </view>
-                <view class="video-btncon">
+                <view class="publictop-btncon">
                     <image src="/static/icons/store.png" style="width:20px;height:20px;" mode="widthFix"></image>
                 </view>
             </view>
@@ -73,27 +73,6 @@ export default {
         width: 100%;
         height: 300px;
         position: relative;
-        .video-btn{
-            position: absolute;
-            width: 100%;
-            padding: 0 20px;
-            height: 35px;
-            top: 20px;
-            z-index: 11;
-            .video-btncon{
-                width: 35px;
-                height: 35px;
-                padding-top: 5px;
-                background: rgba(0, 0, 0, 0.3);
-                align-items: center;
-                border-radius: 100%;
-                text-align: center;
-                flex-direction: column;
-                place-content: flex-start center;
-                flex-shrink: 0;
-                cursor: pointer;
-            }
-        }
     }
     .info{
         width: 100%;

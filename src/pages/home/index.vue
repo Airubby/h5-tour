@@ -1,7 +1,7 @@
 <template>
     <view>
         <view class="page-section-spacing">
-            <swiper class="swiper" :indicator-dots="true" :autoplay="true" :interval="5000" :duration="500" :style="getHeight">
+            <swiper class="swiper" :indicator-dots="true" :circular="true" :autoplay="true" :interval="5000" :duration="500" :style="getHeight">
                 <template v-for="item in 3">
                 <swiper-item :key="item">
                     <image src="/static/images/index-banner.png" class="index-banner" style="width:100%;height:100%;" mode="widthFix"></image>
@@ -38,20 +38,20 @@
             <view class="index-title">AR产品 4S体验</view>
             <view class="index-ars">
                 <template v-for="item in 4">
-                <view class="index-arscon" :key="item">
-                    <image src="/static/images/pimg.png" style="width:100%;height:100%;" mode="widthFix"></image>
-                    <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                    <view class="nowprice">
-                        <view>￥<text class="number">152.00</text></view>
-                    </view>
-                    <view class="info flex">
-                        <view class="oldprice">182.99</view>
-                        <view>累计售出<text>24</text>件</view>
-                    </view>
-                    <view class="btn">
-                        立即购买
-                    </view>
-                </view>
+                    <navigator class="index-arscon" :key="item" :url="'/pages/content/index?id='+ encodeURIComponent(JSON.stringify(item))">
+                        <image src="/static/images/pimg.png" style="width:100%;height:100%;" mode="widthFix"></image>
+                        <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
+                        <view class="nowprice">
+                            <view>￥<text class="number">152.00</text></view>
+                        </view>
+                        <view class="info flex">
+                            <view class="oldprice">182.99</view>
+                            <view>累计售出<text>24</text>件</view>
+                        </view>
+                        <view class="btn">
+                            立即购买
+                        </view>
+                    </navigator>
                 </template>
             </view>
         </view>
@@ -68,30 +68,30 @@
             <swiper :current="tabIndex" style="height:160px;" :duration="300" @change="changeTab">
                 <swiper-item class="rank-con">
                     <template v-for="(item,index) in 3">
-                    <view class="rank-con-box" :key="item">
-                        <view class="rank-img">
-                            <image :src="'/static/icons/rank-'+index+'.png'" class="rank-icon" mode="widthFix"></image>
-                            <image src="/static/images/pimg.png" class="index-con-img" mode="scaleToFill"></image>
-                        </view>
-                        <view class="info">
-                            <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                            <view class="number"><text>24</text>人付款</view>
-                        </view>
-                    </view>
+                        <navigator class="rank-con-box" :key="item" :url="'/pages/content/index?id='+ encodeURIComponent(JSON.stringify(item))">
+                            <view class="rank-img">
+                                <image :src="'/static/icons/rank-'+index+'.png'" class="rank-icon" mode="widthFix"></image>
+                                <image src="/static/images/pimg.png" class="index-con-img" mode="scaleToFill"></image>
+                            </view>
+                            <view class="info">
+                                <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
+                                <view class="number"><text>24</text>人付款</view>
+                            </view>
+                        </navigator>
                     </template>
                 </swiper-item>
                 <swiper-item class="rank-con">
                     <template v-for="(item,index) in 3">
-                    <view class="rank-con-box" :key="item">
-                        <view class="rank-img">
-                            <image :src="'/static/icons/rank-'+index+'.png'" class="rank-icon" mode="widthFix"></image>
-                            <image src="/static/images/banner.png" class="index-con-img" mode="scaleToFill"></image>
-                        </view>
-                        <view class="info">
-                            <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                            <view class="number"><text>24</text>人付款</view>
-                        </view>
-                    </view>
+                        <navigator class="rank-con-box" :key="item" :url="'/pages/content/index?id='+ encodeURIComponent(JSON.stringify(item))">
+                            <view class="rank-img">
+                                <image :src="'/static/icons/rank-'+index+'.png'" class="rank-icon" mode="widthFix"></image>
+                                <image src="/static/images/banner.png" class="index-con-img" mode="scaleToFill"></image>
+                            </view>
+                            <view class="info">
+                                <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
+                                <view class="number"><text>24</text>人付款</view>
+                            </view>
+                        </navigator>
                     </template>
                 </swiper-item>
             </swiper>
@@ -100,15 +100,15 @@
             <view class="index-title index-title1">猜您喜欢</view>
             <view class="index-heart">
                 <template v-for="item in 4">
-                <view class="index-arscon" :key="item">
-                    <image src="/static/images/pimg.png" class="index-con-img" mode="widthFix"></image>
-                    <view class="heart-con">
-                        <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                        <view class="nowprice">
-                            <view>￥<text class="number">152.00</text></view>
+                    <navigator class="index-arscon" :key="item" :url="'/pages/content/index?id='+ encodeURIComponent(JSON.stringify(item))">
+                        <image src="/static/images/pimg.png" class="index-con-img" mode="widthFix"></image>
+                        <view class="heart-con">
+                            <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
+                            <view class="nowprice">
+                                <view>￥<text class="number">152.00</text></view>
+                            </view>
                         </view>
-                    </view>
-                </view>
+                    </navigator>
                 </template>
             </view>
             <navigator class="toallProduct" url="/pages/allProduct/index" open-type="switchTab">
@@ -119,19 +119,19 @@
             <view class="index-title index-title1">逛逛更多宝贝</view>
             <view class="index-heart">
                 <template v-for="item in 4">
-                <view class="index-arscon" :key="item">
-                    <image src="/static/images/pimg.png" class="index-con-img" mode="widthFix"></image>
-                    <view class="heart-con">
-                        <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
-                        <view class="nowprice">
-                            <view>￥<text class="number">152.00</text></view>
+                    <navigator class="index-arscon" :key="item" :url="'/pages/content/index?id='+ encodeURIComponent(JSON.stringify(item))">
+                        <image src="/static/images/pimg.png" class="index-con-img" mode="widthFix"></image>
+                        <view class="heart-con">
+                            <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
+                            <view class="nowprice">
+                                <view>￥<text class="number">152.00</text></view>
+                            </view>
+                            <view class="info flex">
+                                <view class="oldprice">182.99</view>
+                                <view>累计售出<text>24</text>件</view>
+                            </view>
                         </view>
-                        <view class="info flex">
-                            <view class="oldprice">182.99</view>
-                            <view>累计售出<text>24</text>件</view>
-                        </view>
-                    </view>
-                </view>
+                    </navigator>
                 </template>
             </view>
         </view>
@@ -193,11 +193,6 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-    .page-section-spacing{
-        width: 100%;
-        height: auto;
-        overflow: hidden;
-    }
     .index-title{
         font-size: 16px;
         text-align: center;

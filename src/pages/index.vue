@@ -97,7 +97,7 @@ export default {
     },
     data(){
         return{
-            navIndex:3,
+            navIndex:0,
             scrollLeft:0,
             scrollTop:0,
             navBars: [{

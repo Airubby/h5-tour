@@ -66,7 +66,12 @@
         "navigationBarTitleText": "发布问答"
       }
     },
-
+    {
+      "path": "pages/public/test",
+      "style": {
+        "navigationBarTitleText": "测试"
+      }
+    },
     
     {
       "path": "pages/typeProduct/index",

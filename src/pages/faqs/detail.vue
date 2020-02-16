@@ -189,9 +189,9 @@ export default {
         border-radius: 18px;
         width: 104px;
         height: 36px;
-        padding: 11.5px 15px;
-        left: 259px;
-        right: 12px;
+        padding: 10px 15px;
+        left: auto;
+        right: 20px;
         bottom: 105px;
         -webkit-box-align: center;
         align-items: center;

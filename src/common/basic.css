@@ -55,6 +55,9 @@ a{
 .color999{
 	color: #999;
 }
+.pd12{
+	padding: 12px;
+}
 .ml15{
 	margin-left: 15px;
 }
@@ -90,6 +93,9 @@ a{
 }
 .mt20{
 	margin-top: 20px;
+}
+.mt10{
+	margin-top: 10px;
 }
 .pt10{
 	padding-top: 10px !important;
@@ -479,4 +485,33 @@ a{
 	background: #F7F8FA;
 	padding: 4px 6px;
 	border-radius: 3px;
+}
+
+
+.page-section-spacing{
+	width: 100%;
+	height: auto;
+	position: relative;
+	overflow: hidden;
+}
+.publictop-btn{
+	position: absolute;
+	width: 100%;
+	padding: 0 20px;
+	height: 35px;
+	top: 20px;
+	z-index: 11;
+}
+.publictop-btncon{
+	width: 35px;
+	height: 35px;
+	padding-top: 5px;
+	background: rgba(0, 0, 0, 0.3);
+	align-items: center;
+	border-radius: 100%;
+	text-align: center;
+	flex-direction: column;
+	place-content: flex-start center;
+	flex-shrink: 0;
+	cursor: pointer;
 }

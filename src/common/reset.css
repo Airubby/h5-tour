@@ -21,6 +21,10 @@ uni-image{
 	height: 100%;
 	vertical-align: middle;
 }
+.uni-popup .uni-popup__wrapper.uni-custom .uni-popup__wrapper-box{
+	border-radius: 10px 10px 0 0;
+	padding: 0 !important;
+}
 
 	/* #ifdef APP-PLUS */
 
