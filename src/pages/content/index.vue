@@ -9,15 +9,71 @@
                     <image src="/static/icons/cart.png" style="width:18px;height:18px;" mode="widthFix"></image>
                 </view>
             </view>
-            <swiper class="swiper" @change="changeSwiper" :autoplay="true" :circular="true" :interval="5000" :duration="500" :style="getHeight">
-                <template v-for="item in 3">
-                <swiper-item :key="item">
-                    <image src="/static/images/index-banner.png" class="index-banner" style="width:100%;height:100%;" mode="widthFix"></image>
+            <swiper class="swiper" @change="changeSwiper" :current="slidecurrent"
+            :autoplay="false" :circular="true" :interval="5000" :duration="500" :style="getHeight">
+                <swiper-item>
+                    <view class="swiper-video">
+                        <video id="myVideo" src="http://img.cdn.qiniu.dcloud.net.cn/wap2appvsnative.mp4" 
+                            autoplay controls loop width="100%" height="100%"></video>
+                    </view>
                 </swiper-item>
+                <template v-for="item in 3">
+                    <swiper-item :key="item">
+                        <image src="/static/images/contentbg.jpg" class="index-banner" style="width:100%;height:100%;" mode="widthFix"></image>
+                    </swiper-item>
                 </template>
+                <swiper-item>
+                    <view class="swiper-route">
+                        <view class="swiper-bg" :style="'background:url(/static/images/contentbg.jpg)'"></view>
+                        <view class="swiper-route-con">
+                            <view class="route-top">
+                                <view class="mb10"><image src="/static/images/contentbg.jpg" class="img" mode="scaleToFill"></image></view>
+                                <view class="font-size16 mb5">乌鲁木齐-吐鲁番等  跟团游</view>
+                                <view class="font-size12">目的地参团|私家团</view>
+                            </view>
+                            <view class="route-list">
+                                <view class="route-list-left">
+                                    <image src="/static/icons/start-addr.png" class="img" mode="widthFix"></image><text>出发地：</text>
+                                </view>
+                                <view class="route-list-right">乌鲁木齐</view>
+                            </view>
+                            <view class="route-list">
+                                <view class="route-list-left">
+                                    <image src="/static/icons/end-addr.png" class="img" mode="widthFix"></image><text>目的地：</text>
+                                </view>
+                                <view class="route-list-right">克拉玛依区、克拉玛依、吐鲁番、乌尔禾区、乌鲁木齐、博乐市、天山区、昌吉、伊宁市、伊犁、布尔津县、奎屯市</view>
+                            </view>
+                            <view class="route-list">
+                                <view class="route-list-left">
+                                    <image src="/static/icons/strip.png" class="img" mode="widthFix"></image><text>交通方式：</text>
+                                </view>
+                                <view class="route-list-right">去程汽车 返程汽车</view>
+                            </view>
+                            <view class="route-list">
+                                <view class="route-list-left">
+                                    <image src="/static/icons/play.png" class="img" mode="widthFix"></image><text>线路玩法：</text>
+                                </view>
+                                <view class="route-list-right">北疆环线</view>
+                            </view>
+                            <view class="route-list">
+                                <view class="route-list-left">
+                                    <image src="/static/icons/price.png" class="img" mode="widthFix"></image><text>是否含购物：</text>
+                                </view>
+                                <view class="route-list-right">纯玩无购物 一价全包</view>
+                            </view>
+                        </view>
+                    </view>
+                </swiper-item>
             </swiper>
-            <view class="slidepage" v-if="slideList.length>0">{{ slidecurrent + 1 }} / {{ 3 }}</view>
-            <view class="slidepage slidepage1">跟团游</view>
+            <view class="slide-btn">
+                <view class="slidepage slideA">跟团游</view>
+                <view class="flex slide-more-btn">
+                    <view class="slidepage" @tap="btnSwiper(0)" :class="{'active':slidecurrent===0}">视频</view>
+                    <view class="slidepage" @tap="btnSwiper(1)" style="margin:0 10px;" :class="{'active':slidecurrent!==0&&slidecurrent!==4}">图片</view>
+                    <view class="slidepage" @tap="btnSwiper(4)" :class="{'active':slidecurrent===4}">行程</view>
+                </view>
+                <view class="slidepage slideB" v-if="slideList.length>0&&slidecurrent!==0&&slidecurrent!==4">{{slidecurrent}}/{{3}}</view>
+            </view>
         </view>
         <view class="pd12">
             <view class="price">￥310</view>
@@ -480,6 +536,9 @@ export default {
         changeSwiper:function(e){
             this.slidecurrent = e.target.current;
         },
+        btnSwiper:function(i){
+            this.slidecurrent=i;
+        },
         backTo:function(){
             uni.navigateBack();
         },
@@ -512,7 +571,65 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-    
+    .swiper-video{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        background: #000;
+    }
+    .swiper-route{
+        width: 100%;
+        height: 100%;
+        padding: 12px;
+        background-color: rgba(0,0,0,.3);
+        color: #fff;
+        .swiper-bg{
+            width: 100%;
+            height: 100%;
+            background-size: 100%;
+            filter: blur(25px);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+        .route-top{
+            text-align: center;
+            padding: 40px 0 10px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #848484;
+            .img{
+                width:80px;
+                height:80px;
+                border-radius: 4px;
+            }
+        }
+        .route-list{
+            display: flex;
+            font-size: 12px;
+            height: 26px;
+            line-height: 26px;
+            .route-list-left{
+                width: 100px;
+                display: flex;
+                align-items: center;
+                .img{
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 4px;
+                }
+            }
+            .route-list-right{
+                width: calc(100% - 100px);
+                overflow: hidden;
+                height: 26px;
+                line-height: 26px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
     .price{
         color: #ff5000;
         font-size: 18px;
@@ -535,19 +652,40 @@ export default {
         color: #999;
         font-size: 12px;
     }
-    .slidepage{
+    .slide-btn{
+        width: 100%;
         position: absolute;
         bottom: 15px;
-        right: 15px;
-        border-radius: 12px;
-        background-color: rgba(0,0,0,.6);
-        font-size: 12px;
-        padding: 5px 10px;
-        color: #fff;
-    }
-    .slidepage1{
-        left: 15px;
-        right: auto;
+        left: 0;
+        padding: 0 12px;
+        display: flex;
+        justify-content: center;
+        .slidepage{
+            border-radius: 12px;
+            background-color: rgba(0,0,0,.6);
+            font-size: 12px;
+            padding: 5px 10px;
+            color: #fff;
+        }
+        .slideA{
+            position: absolute;
+            left: 12px;
+            bottom: 0;
+        }
+        .slideB{
+            position: absolute;
+            right: 12px;
+            bottom: 0;
+        }
+        .slide-more-btn{
+            .slidepage{
+                background: #fff;
+                color: #333;
+            }
+            .slidepage.active{
+                background: #ffdc00;
+            }
+        }
     }
     .top-data{
         color: #666;
