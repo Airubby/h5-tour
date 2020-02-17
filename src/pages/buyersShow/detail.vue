@@ -1,5 +1,5 @@
 <template>
-    <div class="content bgfff">
+    <view class="content bgfff">
         <view class="show-top flex">
             <view>
                 <image src="/static/images/pimg.png" style="width:33px;height:33px;border-radius:50%;margin-right:3px;" mode="aspectFill"></image>素云墨彩素云墨彩
@@ -102,7 +102,7 @@
                 <image src="/static/icons/cart-orange.png" style="width:50px;height:50px" mode="widthFix"></image>
             </view>
         </view>
-    </div>
+    </view>
 </template>
 
 <script>

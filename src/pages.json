@@ -108,6 +108,12 @@
       "style": {
         "navigationBarTitleText": "线路详情"
       }
+    },
+    {
+      "path": "pages/content/combo",
+      "style": {
+        "navigationBarTitleText": "线路套餐"
+      }
     }
   ],
   "tabBar": {

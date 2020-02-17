@@ -1,5 +1,5 @@
 <template>
-    <div class="content bgfff">
+    <view class="content bgfff">
         <view class="page-section-spacing">
             <view class="publictop-btn flex">
                 <view class="publictop-btncon" @tap="backTo()">
@@ -73,8 +73,23 @@
             </view>
         </view>
         <view class="bg10"></view>
-        <view class="">
-
+        <view class="pd12">
+            <view class="public-title">
+                <view class="show-title">
+                    <view class="addr"><image src="/static/icons/addr.png" class="img" mode="widthFix"></image>多地出发</view>
+                    <view class="addr-info">
+                        <view class="addr-info-con">已选择奢华三飞6日成人套餐已选择奢华三飞6日成人套餐</view>
+                    </view>
+                </view>
+                <navigator url="/pages/content/combo" class="show-all">查看团期<image src="/static/icons/faqs-right.png" class="img" mode="widthFix"></image></navigator>
+            </view>
+            <navigator url="/pages/content/combo" class="addr-list">
+                <view class="addr-list-box"><view>02/21</view><view class="ocolor">￥1525</view></view>
+                <view class="addr-list-box"><view>02/22</view><view class="ocolor">￥1625</view></view>
+                <view class="addr-list-box"><view>02/23</view><view class="ocolor">￥1225</view></view>
+                <view class="addr-list-box"><view>02/24</view><view class="ocolor">￥1725</view></view>
+                <view class="addr-list-box"><view>02/25</view><view class="ocolor">￥3725</view></view>
+            </navigator>
         </view>
         <view class="bg10"></view>
         <view class="pd12">
@@ -83,6 +98,13 @@
                 <view class="show-all">查看全部<image src="/static/icons/faqs-right.png" class="img" mode="widthFix"></image></view>
             </view>
             <view class="discuss">
+                <view class="discuss-type">
+                    <view class="discuss-type-box">风格不错(46)</view>
+                    <view class="discuss-type-box">导游很热抢(36)</view>
+                    <view class="discuss-type-box">服务很棒(6)</view>
+                    <view class="discuss-type-box">住宿环境很好(34)</view>
+                    <view class="discuss-type-box">行程安排靠谱(52)</view>
+                </view>
                 <view class="discuss-user">
                     <image src="/static/images/getAvatar.jpg" class="img" mode="scaleToFill"></image><text>xiao_dai</text>
                 </view>
@@ -95,12 +117,19 @@
                 <view class="show-title">问大家(3)</view>
                 <view class="show-all">查看全部<image src="/static/icons/faqs-right.png" class="img" mode="widthFix"></image></view>
             </view>
-            <view class="faqs flex">
+            <view class="faqs flex mb5">
+                <view class="faqs-con">
+                    <image src="/static/icons/wen.png" class="img" mode="widthFix"></image>
+                    <text>大家办的是马来西亚多次往返签吗?</text>
+                </view>
+                <view class="color999">99个回答</view>
+            </view>
+            <view class="faqs flex mb5">
                 <view class="faqs-con">
                     <image src="/static/icons/wen.png" class="img" mode="widthFix"></image>
                     <text>大家办的是马来西亚多次往返签吗?大家办的是马来西亚多次往返签吗?大家办的是马来西亚多次往返签吗?</text>
                 </view>
-                <view class="color999">99个回答</view>
+                <view class="color999">35个回答</view>
             </view>
         </view>
         <view class="bg10"></view>
@@ -368,7 +397,7 @@
         <ai-img-preview :picList="picList" ref="imgPreview"></ai-img-preview>
         <data-popup :dialogInfo="{title:'新疆国旅'}" ref="dataRef"></data-popup>
         <cx-popup :dialogInfo="{title:'促销'}" ref="dataRef1"></cx-popup>
-    </div>
+    </view>
 </template>
 
 <script>
@@ -562,11 +591,27 @@ export default {
     }
     .show-title{
         font-weight: bold;
+        display: flex;
+        flex: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
     .discuss{
         border-bottom: 1px solid #f6f6f6;
         padding-bottom: 15px;
         margin-bottom: 15px;
+        .discuss-type{
+            display: flex;
+            flex-wrap: wrap;
+            padding-bottom: 5px;
+            .discuss-type-box{
+                padding: 5px 10px;
+                margin: 0 5px 10px 5px;
+                border-radius: 20px;
+                background: #FFF9DE;
+            }
+        }
         .discuss-user{
             display: flex;
             align-items: center;
@@ -706,13 +751,45 @@ export default {
             line-height: 40px;
             text-align: center;
             color: #fff;
-            font-size: 16px;
              border-radius: 0 50px 50px 0;
             background: #FF5F1C;
             &:nth-of-type(1){
                 background: #FF9D02;
                 border-radius: 50px 0 0 50px;
             }
+        }
+    }
+    .addr{
+        display: flex;
+        align-items: center;
+        .img{
+            width:10px;
+            height:14px;
+            margin-right: 5px;
+        }
+    }
+    .addr-info{
+        display: flex;
+        color: #999;
+        font-size: 12px;
+        overflow: hidden;
+        padding: 3px 5px 0 5px;
+        .addr-info-con{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+    .addr-list{
+        display: flex;
+        justify-content: space-around;
+        .addr-list-box{
+            border: 1px solid #f1f1f1;
+            color: #333;
+            text-align: center;
+            font-size: 12px;
+            padding: 5px 8px;
+            border-radius: 3px;
         }
     }
 </style>

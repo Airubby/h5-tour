@@ -1,5 +1,5 @@
 <template>
-    <div class="content">
+    <view class="content">
         <top></top>
         <view class="swiper-box">
             <scroll-view scroll-y="true" :style="{ 'height':scrollHeight }">
@@ -27,7 +27,7 @@
                 </view>
             </scroll-view>
         </view>
-    </div>
+    </view>
 </template>
 
 <script>

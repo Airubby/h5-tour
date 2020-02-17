@@ -64,25 +64,27 @@
 		display:none;
 	}
 	.radio-group-text{
-		border: 1px solid #fff;
-		background:#fff; 
-		padding: 5px 12px;
-		border-radius: 3px;
+		border: 1px solid #f7f7f7;
+		background:#f7f7f7; 
+		padding: 3px 10px;
+		border-radius: 20px;
 		font-size: 14px;
 		cursor: pointer;
 		color: #292C33;
 	}
 	.radio-group-text:hover{
 		border-color: var(--color);
-		color: var(--color);
+		color: #fff;
+		background-image: linear-gradient(90deg,#ff9300,#f35);
 	}
 	.radio-active.radio-group-text{
-		border-color: var(--color);
-		background-color: var(--color);
-		color: #000;
+		border-color: #fff;
+		background-image: linear-gradient(90deg,#ff9300,#f35);
+		color: #fff;
 		font-weight: bold;
 	}
 	.radio-active.radio-group-text:hover{
-		background-color: var(--color);
+		color: #fff;
+		background-image: linear-gradient(90deg,#ff9300,#f35);
 	}
 </style>

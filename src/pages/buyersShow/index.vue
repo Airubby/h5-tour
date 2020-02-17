@@ -1,5 +1,5 @@
 <template>
-    <div class="content">
+    <view class="content">
         <top></top>
         <!--<scroll-view  scroll-y="true" :style="{ 'height':scrollHeight }"> 
             <view class="search-content">
@@ -157,7 +157,7 @@
                 </navigator>
             </view>
         </scroll-view>
-    </div>
+    </view>
 </template>
 
 <script>

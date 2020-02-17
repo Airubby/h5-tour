@@ -1,7 +1,7 @@
 <template>
-    <div class="content">
+    <view class="content">
         132
-    </div>
+    </view>
 </template>
 
 <script>

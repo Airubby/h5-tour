@@ -1,5 +1,5 @@
 <template>
-    <div class="content bgfff">
+    <view class="content bgfff">
         <view class="discuss">
             <view class="discuss-title">
                 <view @tap="backTo()">
@@ -13,7 +13,7 @@
                 <ai-textarea style="border:none;height:100%;" v-model="content" placeholderStyle="color:#999;" :placeholder="placeholder"></ai-textarea>
             </view>
         </view>
-    </div>
+    </view>
 </template>
 
 <script>

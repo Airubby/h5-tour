@@ -1,5 +1,5 @@
 <template>
-    <div class="content bgfff">
+    <view class="content bgfff">
         <view class="discuss">
             <view class="discuss-title">
                 <view class="discuss-title-con"><image src="/static/icons/discuss-blue.png" class="img" mode="widthFix"></image>全部评论</view>
@@ -72,7 +72,7 @@
                 <image src="/static/icons/bi-orange.png" style="width:24px;height:24px;margin-right:10px;" mode="widthFix"></image>我来评论
             </navigator>
         </view>
-    </div>
+    </view>
 </template>
 
 <script>
