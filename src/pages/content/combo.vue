@@ -44,7 +44,7 @@
         <view class="pd12">
             <view class="flex">
                 <view>购买数量</view>
-                <number-box v-model="number"></number-box>
+                <number-box v-model="number" :min="1"></number-box>
             </view>
         </view>
         <view class="bottom-nav-fixed"></view>

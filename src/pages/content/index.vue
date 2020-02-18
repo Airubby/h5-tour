@@ -10,7 +10,7 @@
                 </view>
             </view>
             <swiper class="swiper" @change="changeSwiper" :current="slidecurrent"
-            :autoplay="false" :circular="true" :interval="5000" :duration="500" :style="getHeight">
+            :autoplay="true" :circular="true" :interval="5000" :duration="500" :style="getHeight">
                 <swiper-item>
                     <view class="swiper-video">
                         <video id="myVideo" src="http://img.cdn.qiniu.dcloud.net.cn/wap2appvsnative.mp4" 
@@ -151,7 +151,7 @@
         <view class="pd12">
             <view class="public-title">
                 <view class="show-title">宝贝评价(89)</view>
-                <view class="show-all">查看全部<image src="/static/icons/faqs-right.png" class="img" mode="widthFix"></image></view>
+                <navigator url="/pages/content/discuss" class="show-all">查看全部<image src="/static/icons/faqs-right.png" class="img" mode="widthFix"></image></navigator>
             </view>
             <view class="discuss">
                 <view class="discuss-type">
@@ -435,10 +435,16 @@
         <view class="bottom-nav">
             <view class="bottom-nav-img-box">
                 <view>
-                    <image src="/static/icons/notesContact-orange.png" style="width:18px;height:18px" mode="widthFix"></image>
+                    <image src="/static/icons/notesContact-orange.png" style="width:24px;height:24px" mode="widthFix"></image>
                 </view>
                 <view>客服</view>
             </view>
+            <navigator url="/pages/index" class="bottom-nav-img-box">
+                <view>
+                    <image src="/static/icons/shop.png" style="width:24px;height:24px" mode="widthFix"></image>
+                </view>
+                <view>店铺</view>
+            </navigator>
             <view class="bottom-nav-img-box">
                 <view>
                     <image :src="'/static/icons/store-'+getScStyle+'.png'" style="width:24px;height:24px" mode="widthFix"></image>
@@ -446,8 +452,8 @@
                 <view :class="{'ocolor':bottomInfo.scflag}">收藏</view>
             </view>
             <view class="bottom-nav-auto">
-                <view class="bottom-nav-btn">加入购物车</view>
-                <view class="bottom-nav-btn">立即购买</view>
+                <navigator url="/pages/content/combo" class="bottom-nav-btn">加入购物车</navigator>
+                <navigator url="/pages/content/combo" class="bottom-nav-btn">立即购买</navigator>
             </view>
         </view>
         <ai-img-preview :picList="picList" ref="imgPreview"></ai-img-preview>
@@ -872,28 +878,6 @@ export default {
                 color: #fff;
                 font-size: 12px;
                 padding: 1px 3px;
-            }
-        }
-    }
-    .bottom-nav-img-box{
-        padding: 0 20px;
-    }
-    .bottom-nav-auto{
-        flex: 1 1 0%;
-        display: flex;
-        align-items: center;
-        padding:0  12px;
-        .bottom-nav-btn{
-            width: 50%;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            color: #fff;
-             border-radius: 0 50px 50px 0;
-            background: #FF5F1C;
-            &:nth-of-type(1){
-                background: #FF9D02;
-                border-radius: 50px 0 0 50px;
             }
         }
     }

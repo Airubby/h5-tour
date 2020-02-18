@@ -114,6 +114,12 @@
       "style": {
         "navigationBarTitleText": "线路套餐"
       }
+    },
+    {
+      "path": "pages/content/discuss",
+      "style": {
+        "navigationBarTitleText": "线路评论"
+      }
     }
   ],
   "tabBar": {

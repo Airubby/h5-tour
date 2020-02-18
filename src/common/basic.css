@@ -515,3 +515,22 @@ a{
 	flex-shrink: 0;
 	cursor: pointer;
 }
+.bottom-nav-auto{
+	flex: 1 1 0%;
+	display: flex;
+	align-items: center;
+	padding-right: 12px;
+}
+.bottom-nav-auto .bottom-nav-btn{
+	width: 50%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	 border-radius: 0 50px 50px 0;
+	background: #FF5F1C;
+}
+.bottom-nav-auto .bottom-nav-btn:nth-of-type(1){
+	background: #FF9D02;
+	border-radius: 50px 0 0 50px;
+}
