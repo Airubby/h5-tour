@@ -171,22 +171,24 @@
             </view>
             <view class="public-title">
                 <view class="show-title">问大家(3)</view>
-                <view class="show-all">查看全部<image src="/static/icons/faqs-right.png" class="img" mode="widthFix"></image></view>
+                <navigator url="/pages/content/faqs" class="show-all">查看全部<image src="/static/icons/faqs-right.png" class="img" mode="widthFix"></image></navigator>
             </view>
-            <view class="faqs flex mb5">
-                <view class="faqs-con">
-                    <image src="/static/icons/wen.png" class="img" mode="widthFix"></image>
-                    <text>大家办的是马来西亚多次往返签吗?</text>
+            <navigator url="/pages/content/faqs">
+                <view class="faqs flex mb5">
+                    <view class="faqs-con">
+                        <image src="/static/icons/wen.png" class="img" mode="widthFix"></image>
+                        <text>大家办的是马来西亚多次往返签吗?</text>
+                    </view>
+                    <view class="color999">99个回答</view>
                 </view>
-                <view class="color999">99个回答</view>
-            </view>
-            <view class="faqs flex mb5">
-                <view class="faqs-con">
-                    <image src="/static/icons/wen.png" class="img" mode="widthFix"></image>
-                    <text>大家办的是马来西亚多次往返签吗?大家办的是马来西亚多次往返签吗?大家办的是马来西亚多次往返签吗?</text>
+                <view class="faqs flex mb5">
+                    <view class="faqs-con">
+                        <image src="/static/icons/wen.png" class="img" mode="widthFix"></image>
+                        <text>大家办的是马来西亚多次往返签吗?大家办的是马来西亚多次往返签吗?大家办的是马来西亚多次往返签吗?</text>
+                    </view>
+                    <view class="color999">35个回答</view>
                 </view>
-                <view class="color999">35个回答</view>
-            </view>
+            </navigator>
         </view>
         <view class="bg10"></view>
         <view class="pd12">

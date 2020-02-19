@@ -120,6 +120,18 @@
       "style": {
         "navigationBarTitleText": "线路评论"
       }
+    },
+    {
+      "path": "pages/content/faqs",
+      "style": {
+        "navigationBarTitleText": "线路问答"
+      }
+    },
+    {
+      "path": "pages/content/writeFaqs",
+      "style": {
+        "navigationBarTitleText": "线路提问"
+      }
     }
   ],
   "tabBar": {
