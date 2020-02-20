@@ -501,7 +501,7 @@ export default {
             slidecurrent:0,
             slideList:[3],
             bannerWidth:375,
-            bannerHeight:400,
+            bannerHeight:375,
             tabList: [{
                 text: "图文介绍",
                 navTarget: "#item1",

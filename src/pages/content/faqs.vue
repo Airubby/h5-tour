@@ -21,10 +21,10 @@
                     住的还算干净了。景点的话，在岛上自己租电车比较好，可以到处跑。最好不跟团了，吃饭很差的！
                     </view>
                 </view>
-                <view class="font-size12 flex mt10">
+                <navigator :url="'/pages/content/morefaqs?id='+ encodeURIComponent(JSON.stringify('cc'))" class="font-size12 flex mt10">
                     <view class="all-faqs">查看3个回答</view>
                     <view class="color999">2019-12-12 12:12:12</view>
-                </view>
+                </navigator>
             </view>
         </view>
         <view class="pd12 bgfff mb10">
@@ -45,10 +45,10 @@
                     住的还算干净了。景点的话，在岛上自己租电车比较好，可以到处跑。最好不跟团了，吃饭很差的！
                     </view>
                 </view>
-                <view class="font-size12 flex mt10">
+                <navigator :url="'/pages/content/morefaqs?id='+ encodeURIComponent(JSON.stringify('cc'))" class="font-size12 flex mt10">
                     <view class="all-faqs">查看3个回答</view>
                     <view class="color999">2019-12-12 12:12:12</view>
-                </view>
+                </navigator>
             </view>
         </view>
         <view class="bottom-nav-fixed"></view>
