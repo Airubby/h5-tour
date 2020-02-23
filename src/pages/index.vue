@@ -2,15 +2,7 @@
     <view class="content">
         <view class="public-top">
             <view class="public-top-con">
-                <view class="public-top-info">
-                    <view class="pbulic-logo-info">新疆国旅专营店<image src="/static/icons/public-top-right.png" style="width:14px;height:14px;margin-left:5px;" mode="widthFix"></image></view>
-                    <view class="public-top-attention">
-                        <image src="/static/icons/public-top-xin.png" style="width:18px;height:1px;margin-right:5px;" mode="widthFix"></image>关注
-                    </view>
-                </view>
-                <view class="font-size12">
-                    <image src="/static/icons/logo.png" style="width:16px;height:16px;margin-right:5px;" mode="widthFix"></image>粉丝数<text>234325</text>
-                </view>
+                <top-public></top-public>
                 <view class="public-top-nav">
                     <navigator class="public-top-nav-search" url="/pages/search/index">
                         <view class="search">
@@ -23,21 +15,6 @@
                             :id="'tab'+index" :data-current="index" @tap="tapNav">
                             {{tab.name}}
                             </view>
-                            <!-- <navigator class="public-top-nav-list" :class="{'active':info=='home'}" url="/pages/home/index">
-                                首页
-                            </navigator>
-                            <navigator class="public-top-nav-list" :class="{'active':info=='video'}" url="/pages/video/index">
-                                玩法视频
-                            </navigator>
-                            <navigator class="public-top-nav-list" :class="{'active':info=='share'}" url="/pages/share/index">
-                                分享领钱
-                            </navigator>
-                            <navigator class="public-top-nav-list" :class="{'active':info=='faqs'}" url="/pages/faqs/index">
-                                活动
-                            </navigator>
-                            <navigator class="public-top-nav-list" :class="{'active':info=='mycenter'}" url="/pages/mycenter/index">
-                                个人中心
-                            </navigator> -->
                         </scroll-view>
                     </view>
                 </view>
@@ -80,8 +57,9 @@ import videoc from '@/pages/video/index.vue'
 import share from '@/pages/share/index.vue'
 import faqs from '@/pages/faqs/index.vue'
 import mycenter from '@/pages/mycenter/index.vue'
+import topPublic from '@/pages/public/top-public.vue'
 export default {
-    components: {home,videoc,share,faqs,mycenter},
+    components: {home,videoc,share,faqs,mycenter,topPublic},
     created() {
         
     },
