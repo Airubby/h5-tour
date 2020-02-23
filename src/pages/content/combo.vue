@@ -1,5 +1,6 @@
 <template>
     <view class="content bgfff">
+        <nav-bar title="套餐选择"></nav-bar>
         <view class="pd12">
             <view class="box">
                 <view class="show-title">出发地</view>
@@ -17,6 +18,12 @@
                 <view class="show-title">出游人群</view>
                 <view class="show-box">
                     <ai-radio-group :items="chuyou"></ai-radio-group>
+                </view>
+            </view>
+            <view class="box">
+                <view class="show-title">出游交通</view>
+                <view class="show-box">
+                    <ai-radio-group :items="jiaot"></ai-radio-group>
                 </view>
             </view>
         </view>
@@ -81,8 +88,9 @@ export default {
     data(){
         return{
             cfd:[{label:'北京',value:'1'},{label:'上海',value:'2'},{label:'乌鲁木齐',value:'3'}],
-            tclx:[{label:'A热卖龙脊2人出行单价',value:'1'},{label:'A热卖龙脊3人出行单价',value:'2'},{label:'B热卖龙脊2人出行单价',value:'3'}],
+            tclx:[{label:'A热卖龙脊2人出行单价',value:'1'},{label:'A热卖龙脊3人出行单价',value:'2'},{label:'B热卖龙脊4人出行单价',value:'3'}],
             chuyou:[{label:'成人',value:'1'},{label:'儿童',value:'2'}],
+            jiaot:[{label:'旅游大巴',value:'1'},{label:'商务车',value:'2'},{label:'越野车',value:'3'},{label:'小轿车',value:'4'}],
             number:1,
 
             defaultSelect:"2020-02-28",

@@ -1,16 +1,30 @@
 <template>
     <view class="content">
+        <nav-bar @scroll="topScroll" transparentFixedFontColor="#FFF" type="transparentFixed" :title="topTitle">
+            <view class="pdl15" slot="transparentFixedLeft" @tap="backTo()">
+                <image src="/static/icons/left.png" style="width:12px;height:20px;" mode="widthFix"></image>
+            </view>
+            <view class="pdl15" slot="left" @tap="backTo()">
+                <image src="/static/icons/left-black.png" style="width:12px;height:20px;" mode="widthFix"></image>
+            </view>
+            <view class="pdr15" slot="right">
+                <image src="/static/icons/store-black.png" style="width:24px;height:24px;" mode="widthFix"></image>
+            </view>
+            <view class="pdr15" slot="transparentFixedRight">
+                <image src="/static/icons/store.png" style="width:20px;height:20px;" mode="widthFix"></image>
+            </view>
+        </nav-bar>
         <view class="video-con">
             <video id="myVideo" src="http://img.cdn.qiniu.dcloud.net.cn/wap2appvsnative.mp4" 
             autoplay controls loop width="100%" height="300px"></video>
-            <view class="publictop-btn flex">
+            <!-- <view class="publictop-btn flex">
                 <view class="publictop-btncon" @tap="backTo()">
                     <image src="/static/icons/left.png" style="width:12px;height:20px;" mode="widthFix"></image>
                 </view>
                 <view class="publictop-btncon">
                     <image src="/static/icons/store.png" style="width:20px;height:20px;" mode="widthFix"></image>
                 </view>
-            </view>
+            </view> -->
         </view>
         <view class="info">
             横店影视城经典套餐--亲子游横店影视城经典套餐--亲子游横店影视城经典套餐--亲子游
@@ -50,12 +64,20 @@ export default {
     },
     data(){
         return{
-            
+            topTitle:""
         }
     },
 	methods: {
         backTo:function(){
             uni.navigateBack();
+        },
+        topScroll:function(e){
+            console.log(e)
+            if(e.scrollTop>180){
+                this.topTitle="视频详情"
+            }else{
+                this.topTitle="";
+            }
         }
 	},
     watch: {

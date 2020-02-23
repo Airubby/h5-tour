@@ -1,11 +1,9 @@
 <template>
     <view class="content bgfff">
+        <nav-bar title="买家秀"></nav-bar>
         <view class="show-top flex">
             <view>
                 <image src="/static/images/pimg.png" style="width:33px;height:33px;border-radius:50%;margin-right:3px;" mode="aspectFill"></image>素云墨彩素云墨彩
-            </view>
-            <view class="back" @tap="backTo()">
-                返回
             </view>
         </view>
         <view class="info">
@@ -142,9 +140,6 @@ export default {
         }
     },
 	methods: {
-        backTo:function(){
-            uni.navigateBack();
-        },
         showLineFn:function(){
             this.showLine=!this.showLine;
         },

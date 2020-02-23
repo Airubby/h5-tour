@@ -1,5 +1,6 @@
 <template>
     <view class="content bgfff">
+        <nav-bar title="旅游问答"></nav-bar>
         <ai-textarea style="border:none;" class="mb5" v-model="initParams.content" 
         placeholder="写下你的回答～真实有用的回答更能帮助到提问者，审核通过后将展示给其他小伙伴哦～" 
         placeholderStyle="color:#999;font-size:12px;height:35px;"></ai-textarea>

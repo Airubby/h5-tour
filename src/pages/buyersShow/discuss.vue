@@ -1,11 +1,10 @@
 <template>
     <view class="content bgfff">
+        <nav-bar title="买家秀评论"></nav-bar>
         <view class="discuss">
             <view class="discuss-title">
                 <view class="discuss-title-con"><image src="/static/icons/discuss-blue.png" class="img" mode="widthFix"></image>全部评论</view>
-                <view class="back" @tap="backTo()">
-                    返回
-                </view>
+                
             </view>
             <view class="discuss-content">
                 <view class="discuss-con-box">
@@ -92,9 +91,6 @@ export default {
         }
     },
 	methods: {
-        backTo:function(){
-            uni.navigateBack();
-        },
 	},
     watch: {
         

@@ -1,14 +1,28 @@
 <template>
     <view class="content bgfff">
+        <nav-bar @scroll="topScroll" transparentFixedFontColor="#FFF" type="transparentFixed" :title="topTitle">
+            <view class="pdl15" slot="transparentFixedLeft" @tap="backTo()">
+                <image src="/static/icons/left.png" style="width:12px;height:20px;" mode="widthFix"></image>
+            </view>
+            <view class="pdl15" slot="left" @tap="backTo()">
+                <image src="/static/icons/left-black.png" style="width:12px;height:20px;" mode="widthFix"></image>
+            </view>
+            <view class="pdr15" slot="right">
+                <image src="/static/icons/cart-black.png" style="width:20px;height:20px;" mode="widthFix"></image>
+            </view>
+            <view class="pdr15" slot="transparentFixedRight">
+                <image src="/static/icons/cart.png" style="width:20px;height:20px;" mode="widthFix"></image>
+            </view>
+        </nav-bar>
         <view class="page-section-spacing">
-            <view class="publictop-btn flex">
+            <!-- <view class="publictop-btn flex">
                 <view class="publictop-btncon" @tap="backTo()">
                     <image src="/static/icons/left.png" style="width:12px;height:20px;" mode="widthFix"></image>
                 </view>
                 <view class="publictop-btncon">
                     <image src="/static/icons/cart.png" style="width:18px;height:18px;" mode="widthFix"></image>
                 </view>
-            </view>
+            </view> -->
             <swiper class="swiper" @change="changeSwiper" :current="slidecurrent"
             :autoplay="true" :circular="true" :interval="5000" :duration="500" :style="getHeight">
                 <swiper-item>
@@ -498,6 +512,7 @@ export default {
     },
     data(){
         return{
+            topTitle:"",
             slidecurrent:0,
             slideList:[3],
             bannerWidth:375,
@@ -541,6 +556,14 @@ export default {
         }
     },
 	methods: {
+        topScroll:function(e){
+            console.log(e)
+            if(e.scrollTop>180){
+                this.topTitle="视频详情"
+            }else{
+                this.topTitle="";
+            }
+        },
         changeSwiper:function(e){
             this.slidecurrent = e.target.current;
         },

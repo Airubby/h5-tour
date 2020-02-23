@@ -8,6 +8,9 @@ Vue.component('ai-input',aiInput)
 import aiTextarea from './components/ai-ui/ai-textarea'
 Vue.component('ai-textarea',aiTextarea)
 
+import NavBar from "@/components/navBar";
+Vue.component("nav-bar", NavBar);
+
 Vue.config.productionTip = false
 
 // Vue.prototype.$r = request

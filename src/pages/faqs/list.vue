@@ -1,5 +1,6 @@
 <template>
     <view class="content bgfff">
+        <nav-bar title="旅游问答"></nav-bar>
         <view class="faqs-list-top">
             <view class="faqs-list-box-title">
                 普吉岛有什么好玩的？第一次去要注意什么？
