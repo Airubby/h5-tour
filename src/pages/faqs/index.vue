@@ -22,7 +22,7 @@
             <view><image src="/static/icons/faqs-right.png" style="width:6px;height:10px;margin-left:10px;" mode="widthFix"></image></view>
         </navigator>
         <view class="faqs-list">
-            <navigator class="faqs-list-box" v-for="item in 2" :key="'key'+item" :url="'/pages/faqs/list?id='+ encodeURIComponent(JSON.stringify('item.id'))">
+            <navigator class="faqs-list-box" v-for="(item,index) in 2" :key="index" :url="'/pages/faqs/list?id='+ encodeURIComponent(JSON.stringify('item.id'))">
                 <view class="faqs-list-box-hot">
                     <view class="faqs-list-box-hotcon">
                         <view class="faqs-list-box-hotbg">
@@ -57,7 +57,7 @@
                     </view>
                 </view>
             </navigator>
-            <navigator class="faqs-list-box" v-for="item in 10" :key="'a'+item" :url="'/pages/faqs/list?id='+ encodeURIComponent(JSON.stringify('item.id'))">
+            <navigator class="faqs-list-box" v-for="(item,index) in 10" :key="index" :url="'/pages/faqs/list?id='+ encodeURIComponent(JSON.stringify('item.id'))">
                 <view class="faqs-list-box-hot" style="display:none;">
                     <view class="faqs-list-box-hotcon">
                         <view class="faqs-list-box-hotbg">

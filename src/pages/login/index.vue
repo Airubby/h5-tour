@@ -1,49 +1,48 @@
 <template>
 	<view class="content bgfff">
-		<login-top></login-top>
 		<view class="pd15">
-			<view class="uni-padding-wrap">
-				<uni-segmented-control :current="current" :values="items" v-on:clickItem="onClickItem" styleType="button" activeColor="#40a563"></uni-segmented-control>
+			<view style="display:flex;margin-top:30px;justify-content: center;">
+				<image src="/static/icons/logo.png" style="width:80px;height:80px;marign:0 auto;" mode="scaleToFill"></image>
 			</view>
 			<view style="margin-top: 30px;">
 				<ai-input v-model="initParams.username" placeholder="请输入手机号" placeholderStyle="color:#999;"></ai-input>
-				<ai-input v-if="current === 0" v-model="initParams.password" placeholder="请输入密码" type="password" placeholderStyle="color:#999;"></ai-input>
-				<ai-input v-if="current===1" v-model="initParams.smsCode" placeholder="请输入验证码" placeholderStyle="color:#999;">
-					<button type="primary" size="mini" class="input-button" hover-class="primary-hover" @click="getCode">获取验证码</button>
+				<ai-input v-if="current" v-model="initParams.password" placeholder="请输入密码" type="password" placeholderStyle="color:#999;"></ai-input>
+				<ai-input v-if="!current" v-model="initParams.smsCode" placeholder="请输入验证码" placeholderStyle="color:#999;">
+					<text @click="getCode" class="codebtn">获取验证码</text>
 				</ai-input>
 				<view class="flex">
-					<view class="login-btn">
-						<button type="warn" size="" class="mt25 font-size18" style="background:#FF8000;" hover-class="warn-hover" @tap="loginFn">登录</button>
-					</view>
-					<navigator class="login-btn" url="/pages/register/index">
-						<button type="primary" class="mt25 font-size18" style="background:#40a563;" hover-class="primary-hover">注册</button>
+					<view @tap="changeLogin">{{info}}</view>
+					<navigator url="/pages/register/index">
+						免费注册
 					</navigator>
+				</view>
+				<view style="margin-top:40px;">
+					<button type="warn" size="" class="mt25 font-size18" style="background:#FF8000;" hover-class="warn-hover" @tap="loginFn">登录</button>
 				</view>
 			</view>
 		</view>
-		<copyright></copyright>
     </view>
 </template>
 <style lang="less" scoped>
-	
+	.codebtn{
+		width: 100px;
+		display: flex;
+		align-items: center;
+		text-align: right;
+		color: #FF5000;
+	}
 </style>
 <script>
 import store from '@/store/index'
-import uniSegmentedControl from '@/components/uni-ui/uni-segmented-control/index.vue'
-import copyright from '@/components/bottom-copyright.vue'
-import loginTop from '@/components/login-top.vue'
 export default {
-	components:{uniSegmentedControl,copyright,loginTop},
+	components:{},
 	onLoad() {
 		
 	},
 	data() {
 		return {
-			current:0,
-			items: [
-				'密码登录',
-				'验证码登录'
-			],
+			current:true,
+			info:"短信验证码登录",
 			initParams:{
 				password: "",
   				username: "",
@@ -52,6 +51,14 @@ export default {
 		}
 	},
 	methods: {
+		changeLogin:function(){
+			this.current=!this.current;
+			if(this.current){
+				this.info="短信验证码登录";
+			}else{
+				this.info="账号密码登录";
+			}
+		},
 		getCode:function(){
 			console.log("获取验证码")
 			//type:register login password

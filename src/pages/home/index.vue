@@ -1,9 +1,9 @@
 <template>
     <view>
         <view class="page-section-spacing">
-            <swiper class="swiper" :indicator-dots="true" :circular="true" :autoplay="true" :interval="5000" :duration="500" :style="getHeight">
-                <template v-for="item in 3">
-                <swiper-item :key="item">
+            <swiper class="swiper" :indicator-dots="true" :circular="true" :autoplay="true" :interval="5000" :duration="500" :style="{height:getHeight}">
+                <template v-for="(item,index) in 3">
+                <swiper-item :key="index">
                     <image src="/static/images/index-banner.png" class="index-banner" style="width:100%;height:100%;" mode="widthFix"></image>
                 </swiper-item>
                 </template>
@@ -37,8 +37,8 @@
         <view>
             <view class="index-title">AR产品 4S体验</view>
             <view class="index-ars">
-                <template v-for="item in 4">
-                    <navigator class="index-arscon" :key="item" :url="'/pages/content/index?id='+ encodeURIComponent(JSON.stringify(item))">
+                <template v-for="(item,index) in 4">
+                    <navigator class="index-arscon" :key="index" :url="'/pages/content/index?id='+ encodeURIComponent(JSON.stringify(item))">
                         <image src="/static/images/pimg.png" style="width:100%;height:100%;" mode="widthFix"></image>
                         <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
                         <view class="nowprice">
@@ -59,7 +59,7 @@
             <view class="rank flex">
                 <text>排行榜</text>
                 <view class="rank-title">
-                    <view v-for="(tab,index) in tabBars" :key="'tab'+index" :class="['swiper-tab-list',tabIndex==index ? 'active' : '']"
+                    <view v-for="(tab,index) in tabBars" :key="index" :class="['swiper-tab-list',tabIndex==index ? 'active' : '']"
                     :id="'tab'+index" :data-current="index" @tap="tapTab">
                     {{tab.name}}
                     </view>
@@ -68,7 +68,7 @@
             <swiper :current="tabIndex" style="height:160px;" :duration="300" @change="changeTab">
                 <swiper-item class="rank-con">
                     <template v-for="(item,index) in 3">
-                        <navigator class="rank-con-box" :key="item" :url="'/pages/content/index?id='+ encodeURIComponent(JSON.stringify(item))">
+                        <navigator class="rank-con-box" :key="index" :url="'/pages/content/index?id='+ encodeURIComponent(JSON.stringify(item))">
                             <view class="rank-img">
                                 <image :src="'/static/icons/rank-'+index+'.png'" class="rank-icon" mode="widthFix"></image>
                                 <image src="/static/images/pimg.png" class="index-con-img" mode="scaleToFill"></image>
@@ -82,7 +82,7 @@
                 </swiper-item>
                 <swiper-item class="rank-con">
                     <template v-for="(item,index) in 3">
-                        <navigator class="rank-con-box" :key="item" :url="'/pages/content/index?id='+ encodeURIComponent(JSON.stringify(item))">
+                        <navigator class="rank-con-box" :key="index" :url="'/pages/content/index?id='+ encodeURIComponent(JSON.stringify(item))">
                             <view class="rank-img">
                                 <image :src="'/static/icons/rank-'+index+'.png'" class="rank-icon" mode="widthFix"></image>
                                 <image src="/static/images/banner.png" class="index-con-img" mode="scaleToFill"></image>
@@ -99,8 +99,8 @@
         <view>
             <view class="index-title index-title1">猜您喜欢</view>
             <view class="index-heart">
-                <template v-for="item in 4">
-                    <navigator class="index-arscon" :key="item" :url="'/pages/content/index?id='+ encodeURIComponent(JSON.stringify(item))">
+                <template v-for="(item,index) in 4">
+                    <navigator class="index-arscon" :key="index" :url="'/pages/content/index?id='+ encodeURIComponent(JSON.stringify(item))">
                         <image src="/static/images/pimg.png" class="index-con-img" mode="widthFix"></image>
                         <view class="heart-con">
                             <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
@@ -118,8 +118,8 @@
         <view>
             <view class="index-title index-title1">逛逛更多宝贝</view>
             <view class="index-heart">
-                <template v-for="item in 4">
-                    <navigator class="index-arscon" :key="item" :url="'/pages/content/index?id='+ encodeURIComponent(JSON.stringify(item))">
+                <template v-for="(item,index) in 4">
+                    <navigator class="index-arscon" :key="index" :url="'/pages/content/index?id='+ encodeURIComponent(JSON.stringify(item))">
                         <image src="/static/images/pimg.png" class="index-con-img" mode="widthFix"></image>
                         <view class="heart-con">
                             <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
@@ -148,7 +148,7 @@ export default {
         getHeight(){
             const { windowWidth, windowHeight } = uni.getSystemInfoSync();
             let height=this.bannerHeight*windowWidth/this.bannerWidth;
-            return {'height':height+'px'}
+            return height+'px';
         }
     },
     mounted() {

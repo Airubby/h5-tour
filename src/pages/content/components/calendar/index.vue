@@ -22,7 +22,7 @@
 			</view>
 		</view>
 		<view class="dayBox">
-			<view class="day" v-for="(item,index) in space" v-bind:key="index+999"></view>
+			<view class="day" v-for="(item,index) in space" v-bind:key="9999+index"></view>
 			<view class="day" :class="[getDateStr(item.date)==getDateStr(dayActive.date)?'active':'']" v-for="(item,index) in dayList" v-bind:key="index" @tap="selectDate(item)">
 				<view :class="[isToday(item.date)?'today':'',isBeforeToday(item.date)?'beforeToday':'']">{{isToday(item.date) ? "今天" : item.date.getDate()}}</view>
 				<view class="calen-text-orange">{{item.price?'&yen;'+item.price:''}}</view>

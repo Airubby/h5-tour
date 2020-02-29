@@ -24,15 +24,15 @@
                 </view>
             </view> -->
             <swiper class="swiper" @change="changeSwiper" :current="slidecurrent"
-            :autoplay="true" :circular="true" :interval="5000" :duration="500" :style="getHeight">
+            :autoplay="true" :circular="true" :interval="5000" :duration="500" :style="{height:getHeight}">
                 <swiper-item>
                     <view class="swiper-video">
                         <video id="myVideo" src="http://img.cdn.qiniu.dcloud.net.cn/wap2appvsnative.mp4" 
                             autoplay controls loop width="100%" height="100%"></video>
                     </view>
                 </swiper-item>
-                <template v-for="item in 3">
-                    <swiper-item :key="item">
+                <template v-for="(item,index) in 3">
+                    <swiper-item :key="index">
                         <image src="/static/images/contentbg.jpg" class="index-banner" style="width:100%;height:100%;" mode="widthFix"></image>
                     </swiper-item>
                 </template>
@@ -230,8 +230,8 @@
             </view>
         </view>
         <view class="search-content">
-            <template v-for="item in 4">
-            <view class="search-content-box" :key="'a'+item">
+            <template v-for="(item,index) in 4">
+            <view class="search-content-box" :key="index">
                 <view class="search-content-img">
                     <image src="/static/images/pimg.png" class="img" mode="widthFix"></image>
                 </view>
@@ -331,7 +331,7 @@
                         <view class="show-title">线路详情</view>
                     </view>
                     <scroll-view scroll-x="true" :scroll-left="0" class="public-scroll-navbar-con" ref="scrollNar">
-                            <view v-for="(tab,index) in navBars" :key="'tab'+index" :class="['public-top-nav-list',navIndex==index ? 'active' : '']"
+                            <view v-for="(tab,index) in navBars" :key="index" :class="['public-top-nav-list',navIndex==index ? 'active' : '']"
                         :id="'tab'+index" :data-current="index" @tap="tapNav">
                         {{tab.name}}
                         </view>
@@ -425,8 +425,8 @@
                     </view>
                 </view>
                 <view class="search-content">
-                    <template v-for="item in 8">
-                    <view class="search-content-box" :key="'b'+item">
+                    <template v-for="(item,index) in 8">
+                    <view class="search-content-box" :key="index">
                         <view class="search-content-img">
                             <image src="/static/images/pimg.png" class="img" mode="widthFix"></image>
                         </view>
@@ -495,7 +495,7 @@ export default {
         getHeight(){
             const { windowWidth, windowHeight } = uni.getSystemInfoSync();
             let height=this.bannerHeight*windowWidth/this.bannerWidth;
-            return {'height':height+'px'}
+            return height+'px'
         },
         getScStyle:function(){
             return this.bottomInfo.scflag?'orange':'black';

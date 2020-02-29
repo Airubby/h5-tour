@@ -1,5 +1,6 @@
 <template>
     <view class="content">
+        <view class="status_bar"><!-- 这里是状态栏 --></view>
         <view class="public-top">
             <view class="public-top-con">
                 <top-public></top-public>
@@ -118,5 +119,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-    
+    .status_bar{
+        background: rgba(52, 51, 51, 0.86);
+    }
 </style>
