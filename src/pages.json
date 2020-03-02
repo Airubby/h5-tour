@@ -138,6 +138,12 @@
       "style": {
         "navigationBarTitleText": "线路提问"
       }
+    },
+    {
+      "path": "pages/mycenter/index",
+      "style": {
+        "navigationBarTitleText": "个人中心"
+      }
     }
   ],
   "tabBar": {
