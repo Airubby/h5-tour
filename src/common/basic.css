@@ -235,6 +235,10 @@ a{
 	width: 100%;
 	height: calc(100% - 118px);
 }
+.swiper-center-box{
+	width: 100%;
+	height: calc(100% - 80px);
+}
 .heightFull{
 	height: 100%;
 }

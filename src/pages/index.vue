@@ -16,9 +16,9 @@
                             :id="'tab'+index" :data-current="index" @tap="tapNav">
                             {{tab.name}}
                             </view>
-                            <!-- <navigator url="/pages/mycenter/index" class="public-top-nav-list">
+                            <!-- <view class="public-top-nav-list">
                                 个人中心
-                            </navigator> -->
+                            </view> -->
                         </scroll-view>
                     </view>
                 </view>

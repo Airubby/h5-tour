@@ -18,29 +18,29 @@
                     <navigator url="/pages/content/faqs" class="show-all">查看全部订单<image src="/static/icons/right.png" class="img" mode="widthFix"></image></navigator>
                 </view>
                 <view class="box-flex">
-                    <view class="box-con">
+                    <navigator class="box-con" :url="'/pages/mycenter/tabnav?id='+ encodeURIComponent(JSON.stringify(1))">
                         <view><image src="/static/icons/center-dfk.png" class="img" mode="widthFix"></image></view>
                         <view>待付款</view>
-                    </view>
-                    <view class="box-con">
+                    </navigator>
+                    <navigator class="box-con" :url="'/pages/mycenter/tabnav?id='+ encodeURIComponent(JSON.stringify(2))">
                         <view><image src="/static/icons/center-dfh.png" class="img" mode="widthFix"></image></view>
                         <view>待发货</view>
-                    </view>
-                    <view class="box-con">
+                    </navigator>
+                    <navigator class="box-con" :url="'/pages/mycenter/tabnav?id='+ encodeURIComponent(JSON.stringify(3))">
                         <view><image src="/static/icons/center-dsh.png" class="img" mode="widthFix"></image></view>
                         <view>待收货</view>
-                    </view>
-                    <view class="box-con">
+                    </navigator>
+                    <navigator class="box-con" :url="'/pages/mycenter/tabnav?id='+ encodeURIComponent(JSON.stringify(4))">
                         <view class="box-relative">
                             <image src="/static/icons/center-pj.png" class="img" mode="widthFix"></image>
                             <view class="number">12</view>
                         </view>
                         <view>评价</view>
-                    </view>
-                    <view class="box-con">
+                    </navigator>
+                    <navigator class="box-con">
                         <view><image src="/static/icons/center-sh.png" class="img" mode="widthFix"></image></view>
                         <view>退款/售后</view>
-                    </view>
+                    </navigator>
                 </view>
             </view>
         </view>
@@ -50,22 +50,26 @@
                     <view class="show-title">我的工具</view>
                 </view>
                 <view class="box-flex">
-                    <view class="box-con">
+                    <navigator url="/pages/mycenter/favorite" class="box-con">
                         <view><image src="/static/icons/center-scj.png" class="img" mode="widthFix"></image></view>
                         <view>收藏夹</view>
-                    </view>
-                    <view class="box-con">
+                    </navigator>
+                    <navigator url="/pages/mycenter/cart" class="box-con">
                         <view><image src="/static/icons/center-gwc.png" class="img" mode="widthFix"></image></view>
                         <view>购物车</view>
-                    </view>
-                    <view class="box-con">
+                    </navigator>
+                    <navigator url="/pages/mycenter/evaluate" class="box-con">
                         <view><image src="/static/icons/center-pl.png" class="img" mode="widthFix"></image></view>
                         <view>我的评价</view>
-                    </view>
-                    <view class="box-con">
+                    </navigator>
+                    <navigator url="/pages/login/index" class="box-con">
                         <view><image src="/static/icons/center-kfxm.png" class="img" mode="widthFix"></image></view>
                         <view>客服小蜜</view>
-                    </view>
+                    </navigator>
+                    <navigator url="/pages/mycenter/account" class="box-con">
+                        <view><image src="/static/icons/center-set.png" class="img" mode="widthFix"></image></view>
+                        <view>账号设置</view>
+                    </navigator>
                 </view>
             </view>
         </view>

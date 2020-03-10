@@ -26,7 +26,7 @@ Vue.prototype.$store = store
 function getServerConfig() {
     return new Promise ((resolve, reject) => {
         uni.request({
-            url:"/serverConfig.json",
+            url:"./serverConfig.json",
             success: (res) => {
                 console.log(res.data);
                 let config = res.data;

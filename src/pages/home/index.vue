@@ -4,7 +4,7 @@
             <swiper class="swiper" :indicator-dots="true" :circular="true" :autoplay="true" :interval="5000" :duration="500" :style="{height:getHeight}">
                 <template v-for="(item,index) in 3">
                 <swiper-item :key="index">
-                    <image src="/static/images/index-banner.png" class="index-banner" style="width:100%;height:100%;" mode="widthFix"></image>
+                    <image src="/static/images/new-banner.png" class="index-banner" style="width:100%;height:100%;" mode="widthFix"></image>
                 </swiper-item>
                 </template>
             </swiper>
@@ -163,7 +163,7 @@ export default {
     data(){
         return{
             bannerWidth:375,
-            bannerHeight:400,
+            bannerHeight:100,
             tabIndex:0,
             tabBars: [{
                 name: '销量排行',

@@ -297,7 +297,7 @@ export default {
 <style lang="less" scoped>
 .station {
 	box-sizing:content-box;
-	height: 88upx;
+	height: 86upx;
 }
 .header {
 	display: flex;

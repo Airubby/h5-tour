@@ -1,5 +1,6 @@
 <template>
     <view class="content bgfff">
+        <nav-bar title="线路评价"></nav-bar>
         <view class="discuss-top">
             <view class="num">
                 <view class="numinfo">5</view>

@@ -9,7 +9,7 @@ const productionGzip = true
 const productionGzipExtensions = ['js', 'css']
 module.exports = {
     // 基本路径
-    publicPath: '/',
+    publicPath: './',
     // 输出主文件名称
     indexPath: './index.html',
     //baseUrl: process.env.NODE_ENV === "production" ? "./" : "/"

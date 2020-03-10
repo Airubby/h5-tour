@@ -144,6 +144,48 @@
       "style": {
         "navigationBarTitleText": "个人中心"
       }
+    },
+    {
+      "path": "pages/mycenter/account",
+      "style": {
+        "navigationBarTitleText": "账号设置"
+      }
+    },
+    {
+      "path": "pages/mycenter/cart",
+      "style": {
+        "navigationBarTitleText": "购物车"
+      }
+    },
+    {
+      "path": "pages/mycenter/evaluate",
+      "style": {
+        "navigationBarTitleText": "我的评价"
+      }
+    },
+    {
+      "path": "pages/mycenter/evaluateMore",
+      "style": {
+        "navigationBarTitleText": "发表追评"
+      }
+    },
+    {
+      "path": "pages/mycenter/favorite",
+      "style": {
+        "navigationBarTitleText": "收藏夹"
+      }
+    },
+    {
+      "path": "pages/mycenter/account",
+      "style": {
+        "navigationBarTitleText": "账号设置"
+      }
+    },
+    {
+      "path": "pages/mycenter/tabnav",
+      "style": {
+        "navigationBarTitleText": ""
+      }
     }
   ],
   "tabBar": {
