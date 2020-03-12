@@ -1,7 +1,7 @@
 <template>
-    <view class="content pd12">
-        <view class="box bgfff">
-234
+    <view class="content">
+        <view class="pd12">
+            234
         </view>
     </view>
 </template>

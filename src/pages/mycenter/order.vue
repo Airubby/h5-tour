@@ -38,11 +38,11 @@
 </template>
 
 <script>
-import all from './tabnav/all.vue'
-import sendout from './tabnav/sendout.vue'
-import receive from './tabnav/receive.vue'
-import payment from './tabnav/payment.vue'
-import discuss from './tabnav/discuss.vue'
+import all from './order/all.vue'
+import sendout from './order/sendout.vue'
+import receive from './order/receive.vue'
+import payment from './order/payment.vue'
+import discuss from './order/discuss.vue'
 export default {
     components: {all,sendout,receive,payment,discuss},
     created() {

@@ -1,22 +1,34 @@
 <template>
     <view class="content">
-        <!-- <view class="top">
-            <view class="flex">
-                <view>
-                    <image src="/static/images/show.png" style="width:50px;height:50px;border-radius:50%;" mode="scaleToFill"></image>
-                    <text class="font-size16">1522898989</text>
-                </view>
-                <view>
-                    <image src="/static/icons/set.png" style="width:20px;height:20px;" mode="widthFix"></image>
-                </view>
+        <nav-bar title="收藏夹" bgColor="#f5f5f5">
+
+        </nav-bar>
+        <view class="top">
+            <view v-for="(tab,index) in navBars" :key="'tab'+index" :class="['center-top-nav-list',navIndex==index ? 'active' : '']"
+            :id="'tab'+index" :data-current="index" @tap="tapNav">
+            {{tab.name}}
             </view>
-        </view> -->
+        </view>
+        <swiper :current="navIndex" class="swiper-center-box" :duration="0" @change="changeNav">
+            <swiper-item class="swiper-item">
+                <scroll-view scroll-y="true" :scroll-top="scrollTop" class="heightFull" @scroll="scrollNav">
+                    <line v-if="navIndex===0"></line>
+                </scroll-view>
+            </swiper-item>
+            <swiper-item class="swiper-item">
+                <scroll-view scroll-y="true" :scroll-top="scrollTop" class="heightFull" @scroll="scrollNav">
+                    <content v-if="navIndex===1"></content>
+                </scroll-view>
+            </swiper-item>
+        </swiper>
     </view>
 </template>
 
 <script>
+import line from './favorite/line'
+import content from './favorite/content'
 export default {
-    components: {},
+    components: {line,content},
     created() {
         
     },
@@ -24,11 +36,33 @@ export default {
     },
     data(){
         return{
-            
+            navIndex:0,
+            scrollTop:0,
+            navBars: [{
+                name: '线路',
+            }, {
+                name: '内容'
+            }],
         }
     },
 	methods: {
-        
+        scrollNav:function(e){
+            this.scrollTop = e.detail.scrollTop
+        },
+        async changeNav(e) {
+            let index = e.target.current;
+            this.navIndex = index; //一旦访问data就会出问题
+            this.title=this.navBars[this.navIndex]["name"];
+        },
+        async tapNav(e) { //点击tab-bar
+            let index=parseInt(e.target.dataset.current);
+            if (this.navIndex === index) {
+                return false;
+            } else {
+                this.navIndex = index;
+                this.title=this.navBars[this.navIndex]["name"];
+            }
+        },
 	},
     watch: {
         
@@ -38,54 +72,16 @@ export default {
 </script>
 <style lang="less" scoped>
     .top{
-        background: #FE6C10;
-        padding: 30px 15px;
-        color: #fff;
-    }
-    .top-bottom{
         display: flex;
-        margin-top: 10px;
-        .top-bottom-con{
-            text-align: center;
-            margin-right: 15px; 
-            margin-right: 30px;
-            .txt{
-                font-size: 14px;
-                margin-top: 5px;
-            }
+        justify-content: center;
+        padding-top: 10px;
+        .center-top-nav-list{
+            padding-bottom: 5px;
+            margin: 0 10px;
+        }
+        .active{
+            color: #FF5000;
+            border-bottom: 2px solid #FF5000;
         }
     }
-    .box{
-        background: #fff;
-        border-radius: 10px;
-    }
-    .public-title{
-        display: flex;
-        color: #333;
-        justify-content: space-between;
-        border-bottom: 1px solid #F1F1EB;
-        padding-bottom: 15px;
-        height: 42px;
-        line-height: 42px;
-        padding: 0 10px;
-        .show-all{
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            .img{
-                width:6px;
-                height:11px;
-                margin-left: 5px;
-            }
-        }
-    }
-    .show-title{
-        font-weight: bold;
-        display: flex;
-        flex: 2;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-    
 </style>

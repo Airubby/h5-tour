@@ -1,6 +1,8 @@
 <template>
     <view class="content">
-        <view style="height:1000px;">234</view>
+        <view class="pd12">
+            345
+        </view>
     </view>
 </template>
 

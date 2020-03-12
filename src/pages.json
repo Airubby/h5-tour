@@ -182,9 +182,15 @@
       }
     },
     {
-      "path": "pages/mycenter/tabnav",
+      "path": "pages/mycenter/order",
       "style": {
         "navigationBarTitleText": ""
+      }
+    },
+    {
+      "path": "pages/mycenter/order/detail",
+      "style": {
+        "navigationBarTitleText": "订单详情"
       }
     }
   ],

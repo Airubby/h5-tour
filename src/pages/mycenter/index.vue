@@ -15,22 +15,22 @@
             <view class="box">
                 <view class="public-title">
                     <view class="show-title">我的订单</view>
-                    <navigator url="/pages/content/faqs" class="show-all">查看全部订单<image src="/static/icons/right.png" class="img" mode="widthFix"></image></navigator>
+                    <navigator :url="'/pages/mycenter/order?id='+ encodeURIComponent(JSON.stringify(0))" class="show-all">查看全部订单<image src="/static/icons/right.png" class="img" mode="widthFix"></image></navigator>
                 </view>
                 <view class="box-flex">
-                    <navigator class="box-con" :url="'/pages/mycenter/tabnav?id='+ encodeURIComponent(JSON.stringify(1))">
+                    <navigator class="box-con" :url="'/pages/mycenter/order?id='+ encodeURIComponent(JSON.stringify(1))">
                         <view><image src="/static/icons/center-dfk.png" class="img" mode="widthFix"></image></view>
                         <view>待付款</view>
                     </navigator>
-                    <navigator class="box-con" :url="'/pages/mycenter/tabnav?id='+ encodeURIComponent(JSON.stringify(2))">
+                    <navigator class="box-con" :url="'/pages/mycenter/order?id='+ encodeURIComponent(JSON.stringify(2))">
                         <view><image src="/static/icons/center-dfh.png" class="img" mode="widthFix"></image></view>
                         <view>待发货</view>
                     </navigator>
-                    <navigator class="box-con" :url="'/pages/mycenter/tabnav?id='+ encodeURIComponent(JSON.stringify(3))">
+                    <navigator class="box-con" :url="'/pages/mycenter/order?id='+ encodeURIComponent(JSON.stringify(3))">
                         <view><image src="/static/icons/center-dsh.png" class="img" mode="widthFix"></image></view>
                         <view>待收货</view>
                     </navigator>
-                    <navigator class="box-con" :url="'/pages/mycenter/tabnav?id='+ encodeURIComponent(JSON.stringify(4))">
+                    <navigator class="box-con" :url="'/pages/mycenter/order?id='+ encodeURIComponent(JSON.stringify(4))">
                         <view class="box-relative">
                             <image src="/static/icons/center-pj.png" class="img" mode="widthFix"></image>
                             <view class="number">12</view>
