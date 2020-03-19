@@ -28,7 +28,6 @@ function getServerConfig() {
         uni.request({
             url:"./serverConfig.json",
             success: (res) => {
-                console.log(res.data);
                 let config = res.data;
                 Vue.prototype.$ajaxUrl=config.ajaxUrl;
                 Vue.prototype.$fileUrl=config.fileUrl;

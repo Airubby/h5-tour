@@ -297,7 +297,7 @@ export default {
 <style lang="less" scoped>
 .station {
 	box-sizing:content-box;
-	height: 86upx;
+	height: 88upx;
 }
 .header {
 	display: flex;
@@ -305,7 +305,7 @@ export default {
 	position: relative;
 	justify-content: space-between;
 	box-sizing:content-box;
-	height: 88upx;
+	height: 86upx;
 	/* #ifdef MP */
 	padding-right: 190upx;
 	/* #endif */

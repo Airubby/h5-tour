@@ -5,7 +5,7 @@ export default {
     },
     data(){
         return{
-            searchType:false,
+            searchType:true,
             imgmode:'widthFix',
         }
     },

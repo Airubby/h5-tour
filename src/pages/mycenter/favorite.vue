@@ -1,7 +1,9 @@
 <template>
     <view class="content">
         <nav-bar title="收藏夹" bgColor="#f5f5f5">
-
+            <view class="pdr15" slot="right">
+                管理
+            </view>
         </nav-bar>
         <view class="top">
             <view v-for="(tab,index) in navBars" :key="'tab'+index" :class="['center-top-nav-list',navIndex==index ? 'active' : '']"
@@ -12,12 +14,12 @@
         <swiper :current="navIndex" class="swiper-center-box" :duration="0" @change="changeNav">
             <swiper-item class="swiper-item">
                 <scroll-view scroll-y="true" :scroll-top="scrollTop" class="heightFull" @scroll="scrollNav">
-                    <line v-if="navIndex===0"></line>
+                    <line-component v-if="navIndex===0"></line-component>
                 </scroll-view>
             </swiper-item>
             <swiper-item class="swiper-item">
                 <scroll-view scroll-y="true" :scroll-top="scrollTop" class="heightFull" @scroll="scrollNav">
-                    <content v-if="navIndex===1"></content>
+                    <con-component v-if="navIndex===1"></con-component>
                 </scroll-view>
             </swiper-item>
         </swiper>
@@ -25,10 +27,10 @@
 </template>
 
 <script>
-import line from './favorite/line'
-import content from './favorite/content'
+import lineComponent from './favorite/line'
+import conComponent from './favorite/content'
 export default {
-    components: {line,content},
+    components: {lineComponent,conComponent},
     created() {
         
     },
@@ -74,7 +76,7 @@ export default {
     .top{
         display: flex;
         justify-content: center;
-        padding-top: 10px;
+        padding: 10px 0;
         .center-top-nav-list{
             padding-bottom: 5px;
             margin: 0 10px;

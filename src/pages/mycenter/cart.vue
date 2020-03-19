@@ -1,22 +1,51 @@
 <template>
     <view class="content">
-        <!-- <view class="top">
-            <view class="flex">
-                <view>
-                    <image src="/static/images/show.png" style="width:50px;height:50px;border-radius:50%;" mode="scaleToFill"></image>
-                    <text class="font-size16">1522898989</text>
+        <nav-bar title="购物车" bgColor="#f5f5f5">
+        </nav-bar>
+        <view class="top-checkall">
+            <evan-checkbox-group @change="onGroupChangeAll" v-model="checkall">
+                <evan-checkbox label="all" primaryColor="#dedede">全选</evan-checkbox>
+            </evan-checkbox-group>
+        </view>
+        <view class="search-content search-content-more">
+            <evan-checkbox-group @change="onGroupChange" v-model="checkbox">
+                <view class="evan-checkbox-show__group-item" v-for="item in List" :key="item.id">
+                    <evan-checkbox :label="item.id" primaryColor="#dedede">
+                        <view class="search-content-box">
+                            <view class="search-content-img">
+                                <image src="/static/images/pimg.png" class="img" mode="scaleToFill"></image>
+                            </view>
+                            <view class="search-content-info">
+                                <view class="title">长滩岛旅游项目魔术岛一日游水牛岛海钓海岛跳岛旅游浮潜深</view>
+                                <view class="label">
+                                    123123人收藏
+                                </view>
+                                <view class="type"></view>
+                                <view class="flex">
+                                    <view class="price">￥<text class="number">152.00</text></view>
+                                    <view class="font-size12 remove-btn">删除</view>
+                                </view>
+                            </view>
+                        </view>
+                    </evan-checkbox>
                 </view>
-                <view>
-                    <image src="/static/icons/set.png" style="width:20px;height:20px;" mode="widthFix"></image>
-                </view>
+            </evan-checkbox-group>
+        </view>
+        <view class="bottom-nav-fixed"></view>
+        <view class="bottom-nav">
+            <view class="bottom-nav-auto">
+                <view class="bottom-nav-btn">删除勾选</view>
+                <view class="bottom-nav-btn">立即购买</view>
             </view>
-        </view> -->
+        </view>
     </view>
 </template>
 
 <script>
+import EvanCheckboxGroup from '@/components/evan-checkbox/evan-checkbox-group.vue'
+import EvanCheckbox from '@/components/evan-checkbox/evan-checkbox.vue'
 export default {
-    components: {},
+    components: {EvanCheckboxGroup,EvanCheckbox},
     created() {
         
     },
@@ -24,11 +53,46 @@ export default {
     },
     data(){
         return{
-            
+            checkbox:[],
+            checkall:[],
+            List:[
+                {
+                    label: '红色',
+                    id: 'red'
+                },
+                {
+                    label: '绿色',
+                    id: 'green'
+                },
+                {
+                    label: '蓝色',
+                    id: 'blue'
+                },
+                {
+                    label: '粉色',
+                    id: 'pink'
+                },
+                {
+                    label: '黑色',
+                    id: 'black'
+                }
+            ]
         }
     },
 	methods: {
-        
+        onGroupChange:function(e){
+            console.log(e)
+        },
+        onGroupChangeAll:function(e){
+            console.log(e.length)
+            if(e.length>0){
+                for(let i=0;i<this.List.length;i++){
+                    this.checkbox.push(this.List[i].id);
+                }
+            }else{  
+                this.checkbox=[];
+            }
+        }
 	},
     watch: {
         
@@ -37,55 +101,17 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-    .top{
-        background: #FE6C10;
-        padding: 30px 15px;
-        color: #fff;
+    .top-checkall{
+        padding: 0 0 10px 10px;
     }
-    .top-bottom{
+    .search-content-box{
+        width: calc(100% - 30px);
+    }
+    .remove-btn{
         display: flex;
-        margin-top: 10px;
-        .top-bottom-con{
-            text-align: center;
-            margin-right: 15px; 
-            margin-right: 30px;
-            .txt{
-                font-size: 14px;
-                margin-top: 5px;
-            }
-        }
+        align-items: center;
     }
-    .box{
-        background: #fff;
-        border-radius: 10px;
+    .bottom-nav-auto{
+        padding: 0 12px;
     }
-    .public-title{
-        display: flex;
-        color: #333;
-        justify-content: space-between;
-        border-bottom: 1px solid #F1F1EB;
-        padding-bottom: 15px;
-        height: 42px;
-        line-height: 42px;
-        padding: 0 10px;
-        .show-all{
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            .img{
-                width:6px;
-                height:11px;
-                margin-left: 5px;
-            }
-        }
-    }
-    .show-title{
-        font-weight: bold;
-        display: flex;
-        flex: 2;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-    
 </style>
