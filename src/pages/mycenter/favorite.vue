@@ -1,9 +1,9 @@
 <template>
     <view class="content">
         <nav-bar title="收藏夹" bgColor="#f5f5f5">
-            <view class="pdr15" slot="right">
-                管理
-            </view>
+            <!-- <view class="pdr15" slot="right" @click="changeManage()">
+                {{manageTitle}}
+            </view> -->
         </nav-bar>
         <view class="top">
             <view v-for="(tab,index) in navBars" :key="'tab'+index" :class="['center-top-nav-list',navIndex==index ? 'active' : '']"
@@ -11,15 +11,15 @@
             {{tab.name}}
             </view>
         </view>
-        <swiper :current="navIndex" class="swiper-center-box" :duration="0" @change="changeNav">
+        <swiper :current="navIndex" class="swiper-center-box" :duration="0" @change="changeNav" style="width:100%;height:calc(100% - 90px)">
             <swiper-item class="swiper-item">
                 <scroll-view scroll-y="true" :scroll-top="scrollTop" class="heightFull" @scroll="scrollNav">
-                    <line-component v-if="navIndex===0"></line-component>
+                    <line-component v-if="navIndex===0" :Title="manageTitle"></line-component>
                 </scroll-view>
             </swiper-item>
             <swiper-item class="swiper-item">
                 <scroll-view scroll-y="true" :scroll-top="scrollTop" class="heightFull" @scroll="scrollNav">
-                    <con-component v-if="navIndex===1"></con-component>
+                    <con-component v-if="navIndex===1" :Title="manageTitle"></con-component>
                 </scroll-view>
             </swiper-item>
         </swiper>
@@ -38,6 +38,7 @@ export default {
     },
     data(){
         return{
+            manageTitle:"管理",
             navIndex:0,
             scrollTop:0,
             navBars: [{
@@ -65,6 +66,13 @@ export default {
                 this.title=this.navBars[this.navIndex]["name"];
             }
         },
+        changeManage:function(){
+            if(this.manageTitle=='管理'){
+                this.manageTitle="完成";
+            }else{
+                this.manageTitle="管理";
+            }
+        }
 	},
     watch: {
         

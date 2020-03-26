@@ -104,9 +104,6 @@ export default {
     .top-checkall{
         padding: 0 0 10px 10px;
     }
-    .search-content-box{
-        width: calc(100% - 30px);
-    }
     .remove-btn{
         display: flex;
         align-items: center;
